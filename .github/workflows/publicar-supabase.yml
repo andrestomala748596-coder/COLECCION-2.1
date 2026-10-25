@@ -1,4 +1,4 @@
-name: AJPLAY Publicar JSON existentes
+name: AJPLAY Enviar peliculas a Supabase
 on:
   push:
     branches: ["main"]
@@ -19,90 +19,78 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Preparar catálogo y lotes
-        env:
-          GITHUB_SHA: ${{ github.sha }}
+      - name: Convertir JSON a filas de Supabase y dividir en lotes
         run: |
           python - <<'PY'
           import json, os
           from pathlib import Path
-          files = sorted(Path("peliculas").glob("*.json"))
-          if not files:
-              raise SystemExit("ERROR: no hay JSON en peliculas/")
-          unique = {}
-          for path in files:
-              data = json.loads(path.read_text(encoding="utf-8"))
-              items = data if isinstance(data, list) else [data] if isinstance(data, dict) else None
-              if items is None:
-                  raise SystemExit(f"Formato inesperado: {path}")
+          files=sorted(Path("peliculas").glob("*.json"))
+          if not files: raise SystemExit("ERROR: no hay JSON en peliculas/")
+          movies={}
+          for p in files:
+              data=json.loads(p.read_text(encoding="utf-8"))
+              items=data if isinstance(data,list) else [data] if isinstance(data,dict) else None
+              if items is None: raise SystemExit(f"JSON inválido: {p}")
               for m in items:
-                  if not isinstance(m, dict):
-                      continue
-                  key = f"tmdb:{m['TMDB_ID']}" if m.get("TMDB_ID") else f"video:{m['ID_VIDEO']}" if m.get("ID_VIDEO") else f"title:{m.get('TITULO','')}:{m.get('CATEGORIA','GENERAL')}"
-                  unique[key] = m
-          movies = list(unique.values())
-          if not movies:
-              raise SystemExit("Catálogo vacío; se cancela por seguridad.")
-          temp = Path(os.environ["RUNNER_TEMP"])
-          (temp / "meta.json").write_text(json.dumps({"action":"start","commit_sha":os.environ["GITHUB_SHA"],"total_peliculas":len(movies)}), encoding="utf-8")
-          for i in range(0, len(movies), 40):
-              (temp / f"chunk-{i//40:04d}.json").write_text(json.dumps({"action":"chunk","peliculas":movies[i:i+40]},ensure_ascii=False),encoding="utf-8")
-          print(f"Archivos JSON: {len(files)}")
-          print(f"Películas únicas: {len(movies)}")
-          print(f"Lotes preparados: {(len(movies)+39)//40}")
+                  if not isinstance(m,dict): continue
+                  key=f"tmdb:{m.get('TMDB_ID')}" if m.get("TMDB_ID") else f"video:{m.get('ID_VIDEO')}" if m.get("ID_VIDEO") else f"title:{m.get('TITULO','')}:{m.get('CATEGORIA','GENERAL')}"
+                  def s(v):
+                      if v is None or v=="": return None
+                      if isinstance(v,(dict,list)): return json.dumps(v,ensure_ascii=False)
+                      return str(v)
+                  def n(v):
+                      if v is None or v=="": return None
+                      try: return float(v) if "." in str(v) else int(v)
+                      except (ValueError,TypeError): return None
+                  movies[key]={
+                    "tmdb_id":n(m.get("TMDB_ID")),"id_video":s(m.get("ID_VIDEO") or m.get("ID_OKRU")),
+                    "plataforma":s(m.get("PLATAFORMA")),"titulo":s(m.get("TITULO")) or "Sin título",
+                    "fecha":s(m.get("FECHA")),"portada":s(m.get("PORTADA")),"backdrop":s(m.get("BACKDROP")),
+                    "genero":s(m.get("GENERO")),"rating":n(m.get("RATING")),"duracion":n(m.get("DURACION")),
+                    "frase_promocional":s(m.get("FRASE_PROMOCIONAL")),"sinopsis":s(m.get("SINOPSIS")),
+                    "actores":s(m.get("ACTORES")),"director":s(m.get("DIRECTOR")),"trailer":s(m.get("TRAILER")),
+                    "urls":[str(x) for x in m.get("URLS",[]) if isinstance(x,str)] if isinstance(m.get("URLS"),list) else [],
+                    "metodo":s(m.get("METODO")),
+                    "urls_directas":[str(x) for x in m.get("URLS_DIRECTAS",[]) if isinstance(x,str)] if isinstance(m.get("URLS_DIRECTAS"),list) else [],
+                    "url_directa":s(m.get("URL_DIRECTA")),
+                    "extracted_by_url":m.get("_EXTRACTED_BY_URL") if isinstance(m.get("_EXTRACTED_BY_URL"),dict) else {},
+                    "categoria":s(m.get("CATEGORIA")) or "GENERAL"
+                  }
+          rows=list(movies.values())
+          if not rows: raise SystemExit("ERROR: catálogo vacío; se cancela.")
+          out=Path(os.environ["RUNNER_TEMP"])
+          for i in range(0,len(rows),50):
+              (out/f"rows-{i//50:04d}.json").write_text(json.dumps(rows[i:i+50],ensure_ascii=False),encoding="utf-8")
+          print(f"JSON: {len(files)} archivos; películas únicas: {len(rows)}; lotes: {(len(rows)+49)//50}")
           PY
-      - name: Crear versión de catálogo
+      - name: Insertar lotes directamente en Supabase AJPLAY
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
-          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          curl --fail-with-body --silent --show-error --request POST \
-            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
-            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/meta.json" > "$RUNNER_TEMP/start-response.json"
-          cat "$RUNNER_TEMP/start-response.json"
-          VERSION_ID="$(python -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/start-response.json"))["version_id"])')"
-          echo "VERSION_ID=$VERSION_ID" >> "$GITHUB_ENV"
-      - name: Subir lotes pequeños
-        env:
-          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: |
-          set -euo pipefail
-          for chunk in "$RUNNER_TEMP"/chunk-*.json; do
-            python - "$chunk" "$VERSION_ID" <<'PY'
-          import json,sys
-          p=sys.argv[1]; d=json.load(open(p)); d["version_id"]=sys.argv[2]
-          json.dump(d,open(p,"w"),ensure_ascii=False)
-          PY
-            echo "Subiendo $(basename "$chunk")"
-            curl --fail-with-body --silent --show-error --retry 2 --retry-all-errors --request POST \
-              --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
-              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta SUPABASE_SERVICE_ROLE_KEY en GitHub Secrets"; exit 1; }
+          for batch in "$RUNNER_TEMP"/rows-*.json; do
+            echo "Insertando $(basename "$batch")"
+            curl --fail-with-body --silent --show-error --retry 3 --retry-all-errors \
+              --request POST \
+              --url "$SUPABASE_URL/rest/v1/peliculas" \
               --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
               --header "Content-Type: application/json" \
-              --data-binary "@$chunk"
+              --header "Prefer: return=minimal" \
+              --data-binary "@$batch"
             echo
           done
-      - name: Activar versión solo si está completa
+      - name: Verificar cantidad cargada en Supabase
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
-          python - "$VERSION_ID" "$RUNNER_TEMP" <<'PY'
-          import json,sys
-          p=sys.argv[2]+"/finish.json"
-          json.dump({"action":"finish","version_id":sys.argv[1]},open(p,"w"))
-          PY
-          curl --fail-with-body --silent --show-error --request POST \
-            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
-            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+          curl --fail-with-body --silent --show-error \
+            --url "$SUPABASE_URL/rest/v1/peliculas?select=id&limit=1" \
             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/finish.json"
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"
           echo
+          echo "La consulta de verificación respondió correctamente."
