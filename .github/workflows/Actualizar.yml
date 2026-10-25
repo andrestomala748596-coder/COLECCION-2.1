@@ -1,4 +1,3 @@
-
 name: AJPLAY Extractor
 
 on:
@@ -35,7 +34,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-        
 
       - name: Instalar dependencias
         run: |
@@ -55,15 +53,12 @@ jobs:
           path = Path("urls.txt")
           if not path.is_file():
               raise SystemExit("ERROR: falta urls.txt")
-
           contenido = path.read_text(encoding="utf-8")
           if not contenido.strip():
               raise SystemExit("ERROR: urls.txt está vacío")
-
           datos = json.loads(contenido)
           if not isinstance(datos, list):
               raise SystemExit("ERROR: urls.txt debe contener una lista JSON")
-
           print(f"Registros encontrados: {len(datos)}")
           PY
 
@@ -75,16 +70,67 @@ jobs:
       - name: Verificar que urls.txt siga intacto
         run: git diff --exit-code -- urls.txt
 
-      - name: Guardar JSON generados
+      - name: Guardar JSON generados en GitHub
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add -A -- peliculas category_list.json
-
           if git diff --cached --quiet; then
             echo "No hay cambios en los JSON."
           else
             git commit -m "Actualizar catálogo extraído [skip ci]"
             git push
           fi
+
+      - name: Preparar catálogo para Supabase
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          files = sorted(Path("peliculas").glob("*.json"))
+          if not files:
+              raise SystemExit("ERROR: no hay JSON en peliculas/; se cancela la publicación.")
+
+          movies = []
+          for path in files:
+              try:
+                  data = json.loads(path.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  raise SystemExit(f"ERROR: JSON inválido en {path}: {exc}")
+              if isinstance(data, list):
+                  movies.extend(x for x in data if isinstance(x, dict))
+              elif isinstance(data, dict):
+                  movies.append(data)
+              else:
+                  raise SystemExit(f"ERROR: formato inesperado en {path}")
+
+          if not movies:
+              raise SystemExit("ERROR: los JSON no contienen películas; no se publicará un catálogo vacío.")
+
+          payload = {"commit_sha": os.environ["GITHUB_SHA"], "peliculas": movies}
+          Path(os.environ["RUNNER_TEMP"], "ajplay-catalog.json").write_text(
+              json.dumps(payload, ensure_ascii=False), encoding="utf-8"
+          )
+          print(f"Películas preparadas para Supabase: {len(movies)}")
+          PY
+
+      - name: Publicar versión completa en Supabase AJPLAY
+        env:
+          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
+            echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY en GitHub."
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish \
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
