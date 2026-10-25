@@ -56,11 +56,29 @@ jobs:
                       if value is None or value == "":
                           return None
                       try:
-                          return float(value) if "." in str(value) else int(value)
+                          return float(value)
                       except (ValueError, TypeError):
                           return None
 
-                  tmdb_id = number_value(movie.get("TMDB_ID"))
+                  def integer_value(value):
+                      if value is None or value == "":
+                          return None
+                      try:
+                          number = float(value)
+                          return int(number) if number.is_integer() else None
+                      except (ValueError, TypeError):
+                          return None
+
+                  def date_value(value):
+                      if value is None or value == "":
+                          return None
+                      from datetime import date
+                      try:
+                          return date.fromisoformat(str(value).strip()[:10]).isoformat()
+                      except (ValueError, TypeError):
+                          return None
+
+                  tmdb_id = integer_value(movie.get("TMDB_ID"))
                   video_id = text_value(movie.get("ID_VIDEO") or movie.get("ID_OKRU"))
                   title = text_value(movie.get("TITULO")) or "Sin título"
                   key = str(tmdb_id or video_id or f"{category}:{title}")
@@ -70,12 +88,12 @@ jobs:
                       "id_video": video_id,
                       "plataforma": text_value(movie.get("PLATAFORMA")),
                       "titulo": title,
-                      "fecha": text_value(movie.get("FECHA")),
+                      "fecha": date_value(movie.get("FECHA")),
                       "portada": text_value(movie.get("PORTADA")),
                       "backdrop": text_value(movie.get("BACKDROP")),
                       "genero": text_value(movie.get("GENERO")),
                       "rating": number_value(movie.get("RATING")),
-                      "duracion": number_value(movie.get("DURACION")),
+                      "duracion": integer_value(movie.get("DURACION")),
                       "frase_promocional": text_value(movie.get("FRASE_PROMOCIONAL")),
                       "sinopsis": text_value(movie.get("SINOPSIS")),
                       "actores": text_value(movie.get("ACTORES")),
@@ -164,4 +182,4 @@ jobs:
           api --request POST --url "$SUPABASE_URL/rest/v1/rpc/ajplay_publish_catalog_version" --data-binary "@$RUNNER_TEMP/finish-request.json" >/dev/null
           version_id=""
           trap - ERR
-          echo "Publicación completa: versión activada en Supabase."
+          echo "Publicación completa: versión activada en Supabase; conteo validado por RPC."
