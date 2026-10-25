@@ -1,0 +1,64 @@
+name: AJPLAY Publicar JSON existentes
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/publicar-supabase.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ajplay-publicacion-directa
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar JSON existentes (sin ejecutar extractor)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Preparar catálogo existente
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          files = sorted(Path("peliculas").glob("*.json"))
+          if not files:
+              raise SystemExit("ERROR: no hay JSON en peliculas/")
+          movies = []
+          for p in files:
+              try:
+                  data = json.loads(p.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  raise SystemExit(f"JSON inválido en {p}: {exc}")
+              if isinstance(data, list):
+                  movies.extend(x for x in data if isinstance(x, dict))
+              elif isinstance(data, dict):
+                  movies.append(data)
+              else:
+                  raise SystemExit(f"Formato inesperado en {p}")
+          if not movies:
+              raise SystemExit("Catálogo vacío; se cancela por seguridad.")
+          out = Path(os.environ["RUNNER_TEMP"]) / "ajplay-catalog.json"
+          out.write_text(json.dumps({"commit_sha": os.environ["GITHUB_SHA"], "peliculas": movies}, ensure_ascii=False), encoding="utf-8")
+          print(f"JSON leídos: {len(files)} archivos")
+          print(f"Películas preparadas: {len(movies)}")
+          print(f"Tamaño del payload: {out.stat().st_size} bytes")
+          PY
+      - name: Publicar en Supabase AJPLAY
+        env:
+          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
