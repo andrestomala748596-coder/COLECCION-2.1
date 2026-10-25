@@ -1,0 +1,551 @@
+[
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1226863,
+    "ID_VIDEO": "v7hdakih9470",
+    "PLATAFORMA": "Vimeos",
+    "TITULO": "Super Mario Galaxy: La película",
+    "FECHA": "2026-04-01",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/4Js0gYWxuvTN6b8iAaSF1cSQzBs.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
+    "GENERO": "Familia, Comedia, Aventura, Fantasía, Animación",
+    "RATING": 8.222,
+    "DURACION": 98,
+    "FRASE_PROMOCIONAL": "La galaxia te espera.",
+    "SINOPSIS": "Mario y Luigi se enfrentan una nueva amenaza: Bowser Jr., quién está decidido liberar a su padre del cautiverio y restaurar el legado familiar. Junto con nuevos y viejos compañeros, los hermanos viajan a través de las estrellas para detener la cruzada del joven heredero.",
+    "ACTORES": "  • Chris Pratt (Mario (voice))\n  • Charlie Day (Luigi (voice))\n  • Anya Taylor-Joy (Princess Peach (voice))\n  • Jack Black (Bowser (voice))\n  • Keegan-Michael Key (Toad (voice))",
+    "DIRECTOR": "Michael Jelenic",
+    "TRAILER": "https://youtube.com/watch?v=ipzEY7c7it8",
+    "URLS": [
+      "https://vimeos.net/embed-v7hdakih9470.html"
+    ],
+    "METODO": "AUTOMATICO",
+    "URLS_DIRECTAS": [
+      "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=p5kB7v2vUbFC6UNlMd-k4EOv7iQ5A0fCsGMfjF1QrFo&s=1792915149&e=43200&v=409557684&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+    ],
+    "URL_DIRECTA": "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=p5kB7v2vUbFC6UNlMd-k4EOv7iQ5A0fCsGMfjF1QrFo&s=1792915149&e=43200&v=409557684&i=0.0&sp=0&fr=v7hdakih9470&r=e",
+    "_EXTRACTED_BY_URL": {
+      "https://vimeos.net/embed-v7hdakih9470.html": "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=p5kB7v2vUbFC6UNlMd-k4EOv7iQ5A0fCsGMfjF1QrFo&s=1792915149&e=43200&v=409557684&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1327819,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "ok.ru",
+    "TITULO": "Hoppers",
+    "FECHA": "2026-03-04",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/u53UYu5XG2hNgWGvs3xGhAVzypl.jpg",
+    "GENERO": "Adventure, Animation, Comedy, Family, Science Fiction",
+    "RATING": 8.148,
+    "DURACION": 104,
+    "FRASE_PROMOCIONAL": "Act natural.",
+    "SINOPSIS": "Scientists have discovered how to 'hop' human consciousness into lifelike robotic animals, allowing people to communicate with animals as animals. Animal lover Mabel seizes an opportunity to use the technology, uncovering mysteries within the animal world beyond anything she could have imagined.",
+    "ACTORES": "  • Piper Curda (Mabel (voice))\n  • Bobby Moynihan (King George (voice))\n  • Jon Hamm (Mayor Jerry Generazzo (voice))\n  • Kathy Najimy (Dr. Sam (voice))\n  • Dave Franco (Insect King (voice))",
+    "DIRECTOR": "Daniel Chong",
+    "TRAILER": "https://youtube.com/watch?v=PypDSyIRRSs",
+    "URLS": [
+      "https://ok.ru/video/15544357030638"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://vd715.okcdn.ru/?expires=1793001558049&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.31&type=3&sig=PTSW9SFen4Y&ct=0&urls=185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5"
+    ],
+    "URL_DIRECTA": "https://vd715.okcdn.ru/?expires=1793001558049&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.31&type=3&sig=PTSW9SFen4Y&ct=0&urls=185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15544357030638": "https://vd715.okcdn.ru/?expires=1793001558049&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.31&type=3&sig=PTSW9SFen4Y&ct=0&urls=185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1084244,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "BUDTV Direct",
+    "TITULO": "Toy Story 5",
+    "FECHA": "2026-06-17",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/zkQmhKTszD48vEcjIfwAlqLnGSr.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
+    "GENERO": "Animación, Familia, Comedia, Aventura",
+    "RATING": 8.286,
+    "DURACION": 102,
+    "FRASE_PROMOCIONAL": "Se activó.",
+    "SINOPSIS": "Cuando Woody logra regresar con Buzz, Jessie y el resto de la pandilla, descubren una nueva amenaza: la tecnología. Un nuevo tiempo de juego para los niños.",
+    "ACTORES": "  • Joan Cusack (Jessie (voice))\n  • Tom Hanks (Woody (voice))\n  • Tim Allen (Buzz Lightyear (voice))\n  • Conan O'Brien (Smarty Pants (voice))\n  • Scarlett Spears (Bonnie (voice))",
+    "DIRECTOR": "Andrew Stanton",
+    "TRAILER": "https://youtube.com/watch?v=DW8GC9SQ9Xw",
+    "URLS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1315772,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "BUDTV Direct",
+    "TITULO": "Minions & Monstruos",
+    "FECHA": "2026-06-24",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/uNtBRRLNsCiCcqccv3CMWPx5Xz.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/kkcwhgSFd81QDlXo8ytrpHPQjhy.jpg",
+    "GENERO": "Aventura, Animación, Comedia, Familia, Fantasía",
+    "RATING": 7.559,
+    "DURACION": 90,
+    "FRASE_PROMOCIONAL": "Hollywood tiene un problema monstruoso.",
+    "SINOPSIS": "Esta es la historia alocada, ridícula y totalmente verídica de cómo los Minions conquistaron Hollywood, se convirtieron en estrellas de cine, lo perdieron todo, desataron monstruos en el mundo y luego se unieron para intentar salvar al planeta del caos que acababan de crear.",
+    "ACTORES": "  • Pierre Coffin (The Minions (voice))\n  • Trey Parker (Goomi (voice))\n  • Christoph Waltz (Max (voice))\n  • Allison Janney (Olivia (voice))\n  • Jesse Eisenberg (Dort (voice))",
+    "DIRECTOR": "Pierre Coffin",
+    "TRAILER": "https://youtube.com/watch?v=4Wm2P-4Ilvc",
+    "URLS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1218925,
+    "ID_VIDEO": "gbjdqxg2thzt",
+    "PLATAFORMA": "Vimeos",
+    "TITULO": "Chainsaw Man – La película: Arco de Reze",
+    "FECHA": "2025-09-19",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/mkU7l5MHNlzVQuCfOKcY2f1NFgy.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/gqTz24ZRsCP6AKjARmEivY7m0cK.jpg",
+    "GENERO": "Animación, Acción, Romance, Fantasía",
+    "RATING": 8.5,
+    "DURACION": 100,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "En una brutal guerra entre demonios, cazadores y enemigos secretos, una misteriosa chica llamada Reze ha entrado en el mundo de Denji, y él enfrenta su batalla más mortal hasta ahora, impulsado por el amor en un mundo donde la supervivencia no conoce reglas.",
+    "ACTORES": "  • 戸谷菊之介 (Denji (voice))\n  • 楠木ともり (Makima (voice))\n  • 上田麗奈 (Reze (voice))\n  • 坂田将吾 (Aki (voice))\n  • 高橋花林 (Kobeni (voice))",
+    "DIRECTOR": "吉原達矢",
+    "TRAILER": "https://youtube.com/watch?v=4ab245e7JNU",
+    "URLS": [
+      "https://vimeos.net/embed-gbjdqxg2thzt.html"
+    ],
+    "METODO": "AUTOMATICO",
+    "URLS_DIRECTAS": [
+      "https://p2.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=nnRyXjB29wrO6FlMfWqXO5HgXee8mr37IMS9ACCWY38&s=1792915154&e=43200&v=409557778&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+    ],
+    "URL_DIRECTA": "https://p2.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=nnRyXjB29wrO6FlMfWqXO5HgXee8mr37IMS9ACCWY38&s=1792915154&e=43200&v=409557778&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e",
+    "_EXTRACTED_BY_URL": {
+      "https://vimeos.net/embed-gbjdqxg2thzt.html": "https://p2.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=nnRyXjB29wrO6FlMfWqXO5HgXee8mr37IMS9ACCWY38&s=1792915154&e=43200&v=409557778&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1117857,
+    "ID_VIDEO": "keryjncteims",
+    "PLATAFORMA": "Vimeos",
+    "TITULO": "En sueños",
+    "FECHA": "2025-11-07",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/qBfJ4x6rrhtU4Frwp3GFoBwFzsU.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/cTuFz80FozP54Aob9TYl4mF1wKk.jpg",
+    "GENERO": "Aventura, Animación, Comedia, Familia, Fantasía",
+    "RATING": 6.947,
+    "DURACION": 87,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "Stevie y su hermano menor Elliot emprenden un viaje al universo absurdo de sus propios sueños para pedirle a Sandman que les conceda un deseo: tener una familia perfecta.",
+    "ACTORES": "  • Jolie Hoang-Rappaport (Stevie (voice))\n  • Elias Janssen (Elliot (voice))\n  • Simu Liu (Dad (voice))\n  • Craig Robinson (Baloney Tony (voice))\n  • Cristin Milioti (Mom / Additional Voices (voice))",
+    "DIRECTOR": "Alexander Woo",
+    "TRAILER": "https://youtube.com/watch?v=Dz0KcNJREoQ",
+    "URLS": [
+      "https://vimeos.net/embed-keryjncteims.html"
+    ],
+    "METODO": "AUTOMATICO",
+    "URLS_DIRECTAS": [
+      "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=-Jb7eG3uO_-b4dTZLUXz0f8tPTz_WTXJzVMlKgWdVIc&s=1792915156&e=43200&v=409557783&i=0.0&sp=0&fr=keryjncteims&r=e"
+    ],
+    "URL_DIRECTA": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=-Jb7eG3uO_-b4dTZLUXz0f8tPTz_WTXJzVMlKgWdVIc&s=1792915156&e=43200&v=409557783&i=0.0&sp=0&fr=keryjncteims&r=e",
+    "_EXTRACTED_BY_URL": {
+      "https://vimeos.net/embed-keryjncteims.html": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=-Jb7eG3uO_-b4dTZLUXz0f8tPTz_WTXJzVMlKgWdVIc&s=1792915156&e=43200&v=409557783&i=0.0&sp=0&fr=keryjncteims&r=e"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1311031,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "ok.ru",
+    "TITULO": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "FECHA": "2025-07-18",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "GENERO": "Animation, Action, Fantasy",
+    "RATING": 8.799,
+    "DURACION": 156,
+    "FRASE_PROMOCIONAL": "It's time to have some fun.",
+    "SINOPSIS": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+    "ACTORES": "  • Natsuki Hanae (Tanjiro Kamado (voice))\n  • Takahiro Sakurai (Giyu Tomioka (voice))\n  • Akira Ishida (Akaza (voice))\n  • Hiro Shimono (Zenitsu Agatsuma (voice))\n  • Yoshimasa Hosoya (Kaigaku (voice))",
+    "DIRECTOR": "Haruo Sotozaki",
+    "TRAILER": "https://youtube.com/watch?v=EpAlHmuA2YM",
+    "URLS": [
+      "https://ok.ru/video/15153776757486"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://ok6-11.vkuser.net/?expires=1793001566593&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Wa6JfKchYrU&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
+    ],
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1793001566593&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Wa6JfKchYrU&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15153776757486": "https://ok6-11.vkuser.net/?expires=1793001566593&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Wa6JfKchYrU&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 324857,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "ok.ru",
+    "TITULO": "Spider-Man: Un nuevo universo",
+    "FECHA": "2018-12-06",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/9l9exwzYsEtSbtuLHJQoNQVQGp7.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/1ntePsIqeklfmrQJqZPncCydsqY.jpg",
+    "GENERO": "Animación, Acción, Aventura, Ciencia ficción",
+    "RATING": 8.4,
+    "DURACION": 117,
+    "FRASE_PROMOCIONAL": "Entra en un universo donde más de uno lleva la máscara.",
+    "SINOPSIS": "En un universo paralelo donde Peter Parker ha muerto, un jóven de secundaria llamado Miles Morales es el nuevo Spider-Man. Sin embargo, cuando el líder mafioso Wilson Fisk (a.k.a Kingpin) construye el \"Super Colisionador\" trae a una versión alternativa de Peter Parker que tratará de enseñarle a Miles como ser un mejor Spider-Man. Pero no será el único Spider Man en entrar a este universo, 4 versiones alternas de Spidey aparecerán y buscarán regresar a su universo antes de que toda la realidad colapse.",
+    "ACTORES": "  • Shameik Moore (Miles Morales (voice))\n  • Jake Johnson (Peter B. Parker (voice))\n  • Hailee Steinfeld (Gwen Stacy (voice))\n  • Mahershala Ali (Uncle Aaron (voice))\n  • Brian Tyree Henry (Jefferson Davis (voice))",
+    "DIRECTOR": "Bob Persichetti",
+    "TRAILER": "https://youtube.com/watch?v=11X12iudxPM",
+    "URLS": [
+      "https://ok.ru/video/15434395880174"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://ok6-11.vkuser.net/?expires=1793001569157&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=jNGdyyS0b-Q&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+    ],
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1793001569157&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=jNGdyyS0b-Q&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15434395880174": "https://ok6-11.vkuser.net/?expires=1793001569157&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=jNGdyyS0b-Q&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 803796,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "ok.ru",
+    "TITULO": "Las guerreras k-pop",
+    "FECHA": "2025-06-20",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/6EQMqEmdG5HoGe2zT1WwWUMvVhv.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/w3Bi0wygeFQctn6AqFTwhGNXRwL.jpg",
+    "GENERO": "Fantasía, Música, Comedia, Animación",
+    "RATING": 7.998,
+    "DURACION": 96,
+    "FRASE_PROMOCIONAL": "Cantan. Bailan. Luchan contra demonios.",
+    "SINOPSIS": "Cuando no están llenando estadios, las superestrellas del k‑pop Rumi, Mira y Zoey usan sus superpoderes secretos para proteger a sus fans de amenazas sobrenaturales.",
+    "ACTORES": "  • Arden Cho (Rumi (voice))\n  • May Hong (Mira (voice))\n  • Ji-young Yoo (Zoey (voice))\n  • 안효섭 (Jinu (voice))\n  • 김윤진 (Celine (voice))",
+    "DIRECTOR": "Maggie Kang",
+    "TRAILER": "https://youtube.com/watch?v=61EyTn4ZxYk",
+    "URLS": [
+      "http://ok.ru/video/10286778747479"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://vd700.okcdn.ru/?expires=1793001572485&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.16&type=3&sig=QwUZsUglAfo&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255"
+    ],
+    "URL_DIRECTA": "https://vd700.okcdn.ru/?expires=1793001572485&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.16&type=3&sig=QwUZsUglAfo&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255",
+    "_EXTRACTED_BY_URL": {
+      "http://ok.ru/video/10286778747479": "https://vd700.okcdn.ru/?expires=1793001572485&srcIp=20.165.107.227&pr=10&srcAg=CHROME&ms=176.112.172.16&type=3&sig=QwUZsUglAfo&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1185806,
+    "ID_VIDEO": null,
+    "PLATAFORMA": null,
+    "TITULO": "Paw Patrol: La dino película",
+    "FECHA": "2026-07-23",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/fcBc0yfACuTU9oX9cm54IrFJzEW.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/6TSxLmwT7j1ugtKi8NyMmdzWAGj.jpg",
+    "GENERO": "Animación, Aventura, Familia, Fantasía, Comedia",
+    "RATING": 7.9,
+    "DURACION": 88,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "Cuando una fuerte tormenta deja a la patrulla canina varada en una isla inexplorada llena de dinosaurios vivos, los cachorros deben unirse a su nuevo aliado, Rex, para detener al alcalde Humdinger antes de que la codicia de este provoque una catastrófica erupción volcánica.",
+    "ACTORES": "  • Carter Young (Marshall (voice))\n  • Mckenna Grace (Skye (voice))\n  • Terry Crews (Alistair Stonewall (voice))\n  • Meredith MacNeill (Harper Cutlass (voice))\n  • Ron Pardo (Mayor Humdinger (voice))",
+    "DIRECTOR": "Cal Brunker",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "https://vids.st/storage/uploads/video146308/Paw-Patrol-La-dino-pel-cula-2026-.mp4"
+    ],
+    "METODO": "BUDTV",
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://vids.st/storage/uploads/video146308/Paw-Patrol-La-dino-pel-cula-2026-.mp4"
+    ]
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 502356,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "tokyvideo.com",
+    "TITULO": "Super Mario Bros. La película",
+    "FECHA": "2023-04-05",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/zNKs1T0VZuJiVuhuL5GSCNkGdxf.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+    "GENERO": "Familia, Comedia, Aventura, Fantasía, Animación",
+    "RATING": 7.6,
+    "DURACION": 92,
+    "FRASE_PROMOCIONAL": "No todos los héroes usan capa. Algunos usan manos.",
+    "SINOPSIS": "Mientras trabaja bajo tierra para arreglar una tubería de agua, los plomeros de Brooklyn Mario y su hermano Luigi son transportados por una misteriosa tubería y llegan a un nuevo mundo mágico.",
+    "ACTORES": "  • Chris Pratt (Mario (voice))\n  • Anya Taylor-Joy (Princess Peach (voice))\n  • Charlie Day (Luigi (voice))\n  • Jack Black (Bowser (voice))\n  • Keegan-Michael Key (Toad (voice))",
+    "DIRECTOR": "Michael Jelenic",
+    "TRAILER": "https://youtube.com/watch?v=I8aZahPFQnA",
+    "URLS": [
+      "https://www.tokyvideo.com/es/video/super-mario-bros-la-pelicula-full-espanol-latino"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://cdnst64.tokyvideo.com/videos/877/877187/mp4/f7599feb9f931e046bc9d969f638a1d29bb5795a94f790693df7ccba1bc09b88.mp4?secure=eE-k8wxRaJyqBVBgL021BQ%3D%3D%2C1792999991"
+    ],
+    "URL_DIRECTA": "https://cdnst64.tokyvideo.com/videos/877/877187/mp4/f7599feb9f931e046bc9d969f638a1d29bb5795a94f790693df7ccba1bc09b88.mp4?secure=eE-k8wxRaJyqBVBgL021BQ%3D%3D%2C1792999991",
+    "_EXTRACTED_BY_URL": {
+      "https://www.tokyvideo.com/es/video/super-mario-bros-la-pelicula-full-espanol-latino": "https://cdnst64.tokyvideo.com/videos/877/877187/mp4/f7599feb9f931e046bc9d969f638a1d29bb5795a94f790693df7ccba1bc09b88.mp4?secure=eE-k8wxRaJyqBVBgL021BQ%3D%3D%2C1792999991"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 80321,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "tokyvideo.com",
+    "TITULO": "Madagascar 3: Los Fugitivos",
+    "FECHA": "2012-06-06",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/pKKV7XskZwOkwDzFxqbT2Wj2upv.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/uDR9UjSuykTL8g3N3bh3siZ4n3C.jpg",
+    "GENERO": "Animación, Familia, Comedia, Aventura",
+    "RATING": 6.649,
+    "DURACION": 93,
+    "FRASE_PROMOCIONAL": "Seis años atrás, desaparecieron sin dejar rastro. Este verano finalmente resurgen...",
+    "SINOPSIS": "Alex el león, Marty la cebra, Melman la jirafa y Gloria la hipopótamo están decididos a regresar como sea al Zoológico de Central Park en Nueva York. Tras abandonar África, toman un desvío y emergen, literalmente, en Europa, persiguiendo a los pingüinos y chimpancés que se las han arreglado para hacer saltar la banca de un casino de Monte Carlo. Pronto, los animales son descubiertos por la capitana Chantel DuBois, una testaruda francesa encargada del control de animales, y a la que no le gusta nada que unos animales del zoológico anden sueltos por su ciudad.",
+    "ACTORES": "  • Ben Stiller (Alex (voice))\n  • Chris Rock (Marty (voice))\n  • David Schwimmer (Melman (voice))\n  • Jada Pinkett Smith (Gloria (voice))\n  • Sacha Baron Cohen (Julien (voice))",
+    "DIRECTOR": "Eric Darnell",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3"
+    ],
+    "METODO": "MANUAL",
+    "URLS_DIRECTAS": [
+      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=AN24szn_q_pWjubp2MRONQ%3D%3D%2C1792999994"
+    ],
+    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=AN24szn_q_pWjubp2MRONQ%3D%3D%2C1792999994",
+    "_EXTRACTED_BY_URL": {
+      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=AN24szn_q_pWjubp2MRONQ%3D%3D%2C1792999994"
+    }
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 438695,
+    "ID_VIDEO": null,
+    "PLATAFORMA": null,
+    "TITULO": "Sing 2: ¡Ven y Canta de Nuevo!",
+    "FECHA": "2021-12-01",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/1f7Ah1ZjkaChoo5NkSJRsRKxwVs.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/ztiFxuG0gC6wQ8y7JZFYbCQyN4Y.jpg",
+    "GENERO": "Animación, Comedia, Familia, Música",
+    "RATING": 7.832,
+    "DURACION": 110,
+    "FRASE_PROMOCIONAL": "¿Adónde te llevarán tus sueños?",
+    "SINOPSIS": "Buster Moon y su elenco de animales artistas se preparan para lanzar un deslumbrante espectáculo escénico en la capital mundial del entretenimiento. Solo hay un problema: debe convencer a la estrella de rock más solitaria del mundo de unirse a ellos.",
+    "ACTORES": "  • Matthew McConaughey (Buster Moon (voice))\n  • Reese Witherspoon (Rosita (voice))\n  • Scarlett Johansson (Ash (voice))\n  • Taron Egerton (Johnny (voice))\n  • Bobby Cannavale (Mr. Crystal (voice))",
+    "DIRECTOR": "Garth Jennings",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "http://starlatino.tv:8880/movie/liliana18722/yubQnV5D7bDJ/558407.mkv"
+    ],
+    "METODO": "BUDTV",
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: http://starlatino.tv:8880/movie/liliana18722/yubQnV5D7bDJ/558407.mkv"
+    ]
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1204680,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "BUDTV Direct",
+    "TITULO": "Coyote vs. Acme",
+    "FECHA": "2026-08-17",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/e4P8CIoffzsyjTm9e6U87Mng2CU.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/viZqGq9TNvQ5uXSD4ahg2RpRONT.jpg",
+    "GENERO": "Comedia, Aventura, Familia",
+    "RATING": 7.5,
+    "DURACION": 103,
+    "FRASE_PROMOCIONAL": "La película que ACME no quiere que veas.",
+    "SINOPSIS": "Luego de que los productos Acme le fallan demasiadas veces en su tenaz búsqueda del Correcaminos, Wile E. Coyote decide contratar a un abogado especializado en vallas publicitarias para demandar a Acme Corporation.",
+    "ACTORES": "  • Will Forte (Kevin Avery)\n  • Lana Condor (Paige Avery)\n  • John Cena (Buddy Crane)\n  • Tone Bell (Sal Maltese)\n  • Martha Kelly (Dottie Jones)",
+    "DIRECTOR": "Dave Green",
+    "TRAILER": "https://youtube.com/watch?v=gFAw7jxJOsY",
+    "URLS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1732625,
+    "ID_VIDEO": null,
+    "PLATAFORMA": null,
+    "TITULO": "LEGO Disney Princesa: Caos mágico",
+    "FECHA": "2026-08-21",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/21SCsrJ2dd6tnYHMjOFZLt2E4Nl.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/kBrBcgdite6vpa6VkYEcjZuof7z.jpg",
+    "GENERO": "Animación, Fantasía, Comedia, Aventura, Familia",
+    "RATING": 6.6,
+    "DURACION": 22,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "Durante una fuerte tormenta, las princesas y sus amigos acogen a animales necesitados mientras disfrutan de un día acogedor en su castillo. Pero cuando los animales se vuelven locos, se desata el caos. Tras investigar un poco, descubren que detrás se esconde un villano y, gracias al trabajo en equipo, a su ingenio y a la ayuda de un amigo inesperado, deben restablecer el orden y salvar su hogar.",
+    "ACTORES": "  • Jodi Benson (Ariel (voice))\n  • Auliʻi Cravalho (Moana (voice))\n  • Mandy Moore (Rapunzel (voice))\n  • Katherine Von Till (Snow White (voice))\n  • Ming-Na Wen (Mulan (voice))",
+    "DIRECTOR": "Randi Rodrigues",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "https://files.eintim.me/content/cdn/FByLrvUkACPU.mp4"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://files.eintim.me/content/cdn/FByLrvUkACPU.mp4": "https://files.eintim.me/content/cdn/FByLrvUkACPU.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://files.eintim.me/content/cdn/FByLrvUkACPU.mp4"
+    ],
+    "URL_DIRECTA": "https://files.eintim.me/content/cdn/FByLrvUkACPU.mp4"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1297842,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "tokyvideo.com",
+    "TITULO": "GOAT: La cabra que cambió el juego",
+    "FECHA": "2026-02-11",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/3dH7p6eAfzDElYYFKfYWpf9xlsG.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/tq3h43fZy0H80vzf47MAY7R9Mxo.jpg",
+    "GENERO": "Animación, Comedia, Familia",
+    "RATING": 8.0,
+    "DURACION": 100,
+    "FRASE_PROMOCIONAL": "Nunca eres demasiado pequeño para soñar en grande.",
+    "SINOPSIS": "Will, un pequeño cabrito con grandes sueños, tiene la oportunidad única de unirse a los profesionales y jugar al roarball, un deporte de contacto intenso y mixto, dominado por los animales más rápidos y feroces del mundo. A sus nuevos compañeros no les entusiasma tener un pequeño cabrito en su equipo, pero Will está decidido a revolucionar el deporte y demostrar de una vez por todas que los pequeños también pueden jugar al béisbol.",
+    "ACTORES": "  • Caleb McLaughlin (Will Harris (voice))\n  • Gabrielle Union (Jett Fillmore (voice))\n  • Stephen Curry (Lenny Williamson (voice))\n  • Aaron Pierre (Mane Attraction (voice))\n  • Nicola Coughlan (Olivia Burke (voice))",
+    "DIRECTOR": "Tyree Dillihay",
+    "TRAILER": "https://youtube.com/watch?v=2I6sfNgZ0dU",
+    "URLS": [
+      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat"
+    ],
+    "METODO": "MANUAL",
+    "_EXTRACTED_BY_URL": {
+      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=sE5efz-uws2lDg0nLfYxQQ%3D%3D%2C1793001786"
+    },
+    "URLS_DIRECTAS": [
+      "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=sE5efz-uws2lDg0nLfYxQQ%3D%3D%2C1793001786"
+    ],
+    "URL_DIRECTA": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=sE5efz-uws2lDg0nLfYxQQ%3D%3D%2C1793001786"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1740877,
+    "ID_VIDEO": null,
+    "PLATAFORMA": null,
+    "TITULO": "Sesame Street: Tormenta en Plaza Sésamo",
+    "FECHA": "2026-08-03",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/oMAuDxxMPxzHjUmbrCR9EvJyH8U.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/ewuZpFd7zoB8xCtwlRGUU3E599s.jpg",
+    "GENERO": "Familia, Animación",
+    "RATING": 6.8,
+    "DURACION": 30,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "Un huracán pasa por Sesame Street, ¡y Big Bird se queda sin nido! Pero sus amigos se unen para animarlo y ayudarlo a reconstruir su hogar.",
+    "ACTORES": "  • Chris Knowings ()\n  • Suki Lopez (Nina)\n  • Alan Muraoka ()\n  • Michelle Buteau (Sammy Squalls)\n  • Post Malone ()",
+    "DIRECTOR": "Scott Preston",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "https://files.eintim.me/content/cdn/EZwxTpFjhdLB.mp4"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://files.eintim.me/content/cdn/EZwxTpFjhdLB.mp4": "https://files.eintim.me/content/cdn/EZwxTpFjhdLB.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://files.eintim.me/content/cdn/EZwxTpFjhdLB.mp4"
+    ],
+    "URL_DIRECTA": "https://files.eintim.me/content/cdn/EZwxTpFjhdLB.mp4"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1318621,
+    "ID_VIDEO": null,
+    "PLATAFORMA": null,
+    "TITULO": "Descendientes: Un malvado País de las Maravillas",
+    "FECHA": "2026-07-16",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/5lpbVRg99l3VkYyXOiZraNgNlXv.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/qlfqDJ9Piv5ufzYA8j2319mwKZU.jpg",
+    "GENERO": "Fantasía, Película de TV, Familia, Aventura",
+    "RATING": 7.5,
+    "DURACION": 95,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "Tras cambiar la historia y evitar que la Reina de Corazones se vuelva malvada, además de salvar a Cenicienta, todo parece perfecto para Red y Chloe. Pero alterar el pasado tiene consecuencias inesperadas. Cuando Maddox Sombrerero, un antiguo amigo de Red, surge como un nuevo villano y captura a la Reina, Red y Chloe deben volver por la madriguera del conejo. Allí, se unen a Pink, la hermana de Red; Luis, el hijo de Luisa Madrigal, y un equipo de villanos liderado por Max, el hijo de Maddox, para salvar a la Reina y a todo el País de las Maravillas.",
+    "ACTORES": "  • Kylie Cantrall (Red)\n  • Malia Baker (Chloe)\n  • Liamani Segura (Pink)\n  • Rita Ora (Queen of Hearts)\n  • Brandy Norwood (Cinderella)",
+    "DIRECTOR": "Kimmy Gatewood",
+    "TRAILER": "https://youtube.com/watch?v=FI_6BNlG1IE",
+    "URLS": [
+      "https://files.eintim.me/content/cdn/iZIMXQbMtqgf.mp4"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://files.eintim.me/content/cdn/iZIMXQbMtqgf.mp4": "https://files.eintim.me/content/cdn/iZIMXQbMtqgf.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://files.eintim.me/content/cdn/iZIMXQbMtqgf.mp4"
+    ],
+    "URL_DIRECTA": "https://files.eintim.me/content/cdn/iZIMXQbMtqgf.mp4"
+  },
+  {
+    "CATEGORIA": "2026",
+    "TMDB_ID": 1750432,
+    "ID_VIDEO": null,
+    "PLATAFORMA": "BUDTV Direct",
+    "TITULO": "Spidey y Los Vengadores: ¡Superequipo Halloween!",
+    "FECHA": "2026-09-24",
+    "PORTADA": "https://image.tmdb.org/t/p/w500/nLhj8GhpL7njlalnIW4DIZyXyaa.jpg",
+    "BACKDROP": "https://image.tmdb.org/t/p/w500/5Ur40GWrgeLePW6RAYZZoS5BRLk.jpg",
+    "GENERO": "Animación, Aventura, Fantasía, Familia",
+    "RATING": 7.1,
+    "DURACION": 26,
+    "FRASE_PROMOCIONAL": "",
+    "SINOPSIS": "",
+    "ACTORES": "  • Nick Fisher (Peter / Spider-Man (Spidey) / Kid at Party (voice))\n  • Este Haim (Hallows Eve (voice))\n  • Patrick Stump (Jack O’Lantern / Party Goer (voice))\n  • Lincoln Bonilla (Tony / Iron Man (voice))\n  • Armen Taylor (Hulk / Levitating Ghost Decoration (voice))",
+    "DIRECTOR": "Darren Bachynski",
+    "TRAILER": "No disponible",
+    "URLS": [
+      "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+    ],
+    "METODO": "BUDTV",
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4": "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+  }
+]
