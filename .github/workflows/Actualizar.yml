@@ -70,8 +70,9 @@ jobs:
         env:
           GITHUB_SHA: ${{ github.sha }}
         run: |
-          python - <<'PY'
-          import json, os
+          set -euo pipefail
+          python - "$RUNNER_TEMP" "$GITHUB_SHA" <<'PY'
+          import json, sys
           from pathlib import Path
 
           files = sorted(Path("peliculas").glob("*.json"))
@@ -89,113 +90,123 @@ jobs:
                   if not isinstance(movie, dict):
                       continue
                   category = str(movie.get("CATEGORIA") or movie.get("categoria") or path.stem).strip() or path.stem
-                  tmdb_id = movie.get("TMDB_ID")
-                  video_id = movie.get("ID_VIDEO") or movie.get("ID_OKRU")
-                  title = movie.get("TITULO") or "Sin título"
-                  key = str(tmdb_id or video_id or f"{category}:{title}")
 
-                  # La Edge Function espera claves del JSON original y URLS normalizado.
-                  row = dict(movie)
-                  row["CATEGORIA"] = category
-                  row["ID_VIDEO"] = video_id
-                  row["URLS"] = movie.get("URLS") if isinstance(movie.get("URLS"), list) else (
-                      movie.get("URLS_OKRU") if isinstance(movie.get("URLS_OKRU"), list) else []
-                  )
-                  row["URLS_DIRECTAS"] = movie.get("URLS_DIRECTAS") if isinstance(movie.get("URLS_DIRECTAS"), list) else []
-                  row["_EXTRACTED_BY_URL"] = movie.get("_EXTRACTED_BY_URL") if isinstance(movie.get("_EXTRACTED_BY_URL"), dict) else {}
+                  def text_value(value):
+                      if value is None or value == "":
+                          return None
+                      if isinstance(value, (dict, list)):
+                          return json.dumps(value, ensure_ascii=False)
+                      return str(value)
+
+                  def number_value(value):
+                      if value is None or value == "":
+                          return None
+                      try:
+                          return float(value) if "." in str(value) else int(value)
+                      except (ValueError, TypeError):
+                          return None
+
+                  tmdb_id = number_value(movie.get("TMDB_ID"))
+                  video_id = text_value(movie.get("ID_VIDEO") or movie.get("ID_OKRU"))
+                  title = text_value(movie.get("TITULO")) or "Sin título"
+                  key = str(tmdb_id or video_id or f"{category}:{title}")
+                  row = {
+                      "tmdb_id": tmdb_id,
+                      "id_video": video_id,
+                      "plataforma": text_value(movie.get("PLATAFORMA")),
+                      "titulo": title,
+                      "fecha": text_value(movie.get("FECHA")),
+                      "portada": text_value(movie.get("PORTADA")),
+                      "backdrop": text_value(movie.get("BACKDROP")),
+                      "genero": text_value(movie.get("GENERO")),
+                      "rating": number_value(movie.get("RATING")),
+                      "duracion": number_value(movie.get("DURACION")),
+                      "frase_promocional": text_value(movie.get("FRASE_PROMOCIONAL")),
+                      "sinopsis": text_value(movie.get("SINOPSIS")),
+                      "actores": text_value(movie.get("ACTORES")),
+                      "director": text_value(movie.get("DIRECTOR")),
+                      "trailer": text_value(movie.get("TRAILER")),
+                      "urls": [str(x) for x in (movie.get("URLS") if isinstance(movie.get("URLS"), list) else movie.get("URLS_OKRU", [])) if isinstance(x, str)],
+                      "metodo": text_value(movie.get("METODO")),
+                      "urls_directas": [str(x) for x in movie.get("URLS_DIRECTAS", []) if isinstance(x, str)] if isinstance(movie.get("URLS_DIRECTAS"), list) else [],
+                      "url_directa": text_value(movie.get("URL_DIRECTA")),
+                      "extracted_by_url": movie.get("_EXTRACTED_BY_URL") if isinstance(movie.get("_EXTRACTED_BY_URL"), dict) else {},
+                      "categoria": category
+                  }
                   rows[(key, category)] = row
 
-          movies = list(rows.values())
-          if not movies:
+          records = list(rows.values())
+          if not records:
               raise SystemExit("ERROR: catálogo vacío; no se publicará")
-          Path(os.environ["RUNNER_TEMP"], "ajplay-catalog.json").write_text(
-              json.dumps({"commit_sha": os.environ["GITHUB_SHA"], "peliculas": movies}, ensure_ascii=False),
-              encoding="utf-8")
-          print(f"JSON: {len(files)}; registros únicos por identificador/categoría: {len(movies)}")
-          print("Categorías: " + ", ".join(sorted({r["CATEGORIA"] for r in movies})))
+          out = Path(sys.argv[1])
+          (out / "ajplay-catalog.json").write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
+          for old in out.glob("ajplay-rest-batch-*.json"):
+              old.unlink()
+          for start in range(0, len(records), 50):
+              (out / f"ajplay-rest-batch-{start // 50:04d}.json").write_text(
+                  json.dumps(records[start:start + 50], ensure_ascii=False), encoding="utf-8")
+          print(f"JSON: {len(files)}; registros únicos por identificador/categoría: {len(records)}")
+          print(f"Lotes preparados: {(len(records) + 49) // 50}")
           PY
+
       - name: Publicar versión completa en Supabase AJPLAY
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
           test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          FUNCTION_URL="$SUPABASE_URL/functions/v1/ajplay-catalog-publish"
-
-          # La Edge Function exige start -> chunk -> finish; no acepta el catálogo entero de una sola vez.
-          python - "$RUNNER_TEMP/ajplay-catalog.json" "$RUNNER_TEMP" <<'PY'
-          import json, sys
-          from pathlib import Path
-          source, out = Path(sys.argv[1]), Path(sys.argv[2])
-          payload = json.loads(source.read_text(encoding="utf-8"))
-          movies = payload.get("peliculas")
-          if not isinstance(movies, list) or not movies:
-              raise SystemExit("ERROR: el catálogo no contiene películas")
-          if not all(isinstance(movie, dict) for movie in movies):
-              raise SystemExit("ERROR: el catálogo contiene registros inválidos")
-          (out / "start-request.json").write_text(json.dumps({
-              "action": "start",
-              "commit_sha": payload.get("commit_sha"),
-              "total_peliculas": len(movies)
-          }, ensure_ascii=False), encoding="utf-8")
-          for old in out.glob("chunk-*.json"):
-              old.unlink()
-          for index in range(0, len(movies), 100):
-              (out / f"chunk-{index // 100:04d}.json").write_text(
-                  json.dumps(movies[index:index + 100], ensure_ascii=False),
-                  encoding="utf-8")
-          print(f"Catálogo validado: {len(movies)} películas en lotes de hasta 100.")
-          PY
-
-          # curl reintenta respuestas transitorias como HTTP 503, sin imprimir credenciales.
           CURL_RETRY=(--retry 5 --retry-delay 10 --retry-max-time 300 --connect-timeout 20 --max-time 300)
-          start_response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}" \
-            --request POST \
-            --url "$FUNCTION_URL" \
-            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/start-request.json")"
-          version_id="$(printf '%s' "$start_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") and d.get("version_id"), d; print(d["version_id"])')"
-          echo "Versión de catálogo iniciada."
+          api() {
+            curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}" --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" --header "Content-Type: application/json" "$@"
+          }
 
-          for batch in "$RUNNER_TEMP"/chunk-*.json; do
-            python - "$batch" "$RUNNER_TEMP/chunk-request.json" "$version_id" <<'PY'
+          python - "$RUNNER_TEMP/ajplay-catalog.json" "$RUNNER_TEMP/version-request.json" "$GITHUB_SHA" <<'PY'
           import json, sys
           from pathlib import Path
-          movies = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          records = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          if not records:
+              raise SystemExit("ERROR: no hay registros para publicar")
           Path(sys.argv[2]).write_text(json.dumps({
-              "action": "chunk",
-              "version_id": sys.argv[3],
-              "peliculas": movies
-          }, ensure_ascii=False), encoding="utf-8")
+              "estado": "preparando",
+              "commit_sha": sys.argv[3],
+              "total_peliculas": len(records)
+          }), encoding="utf-8")
+          print(f"Versión preparada para {len(records)} registros.")
           PY
-            response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}" \
-              --request POST \
-              --url "$FUNCTION_URL" \
-              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-              --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-              --header "Content-Type: application/json" \
-              --data-binary "@$RUNNER_TEMP/chunk-request.json")"
-            printf '%s' "$response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
-            echo "Lote $(basename "$batch") publicado."
+
+          version_id=""
+          mark_failed() {
+            if [[ -n "$version_id" ]]; then
+              curl --silent --show-error --request PATCH --url "$SUPABASE_URL/rest/v1/catalogo_versiones?id=eq.$version_id" --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" --header "Content-Type: application/json" --header "Prefer: return=minimal" --data '{"estado":"fallido"}' >/dev/null || true
+            fi
+          }
+          trap mark_failed ERR
+
+          start_response="$(api --request POST --url "$SUPABASE_URL/rest/v1/catalogo_versiones?select=id" --header "Prefer: return=representation" --data-binary "@$RUNNER_TEMP/version-request.json")"
+          version_id="$(printf '%s' "$start_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert isinstance(d,list) and d and d[0].get("id"), d; print(d[0]["id"])')"
+          echo "Versión de catálogo creada."
+
+          for batch in "$RUNNER_TEMP"/ajplay-rest-batch-*.json; do
+            python - "$batch" "$RUNNER_TEMP/versioned-batch.json" "$version_id" <<'PY'
+          import json, sys
+          from pathlib import Path
+          records = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          for row in records:
+              row["version_id"] = sys.argv[3]
+          Path(sys.argv[2]).write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
+          PY
+            api --request POST --url "$SUPABASE_URL/rest/v1/peliculas" --header "Prefer: return=minimal" --data-binary "@$RUNNER_TEMP/versioned-batch.json" >/dev/null
+            echo "Lote $(basename "$batch") insertado."
           done
 
           python - "$RUNNER_TEMP/finish-request.json" "$version_id" <<'PY'
           import json, sys
           from pathlib import Path
-          Path(sys.argv[1]).write_text(json.dumps({
-              "action": "finish",
-              "version_id": sys.argv[2]
-          }), encoding="utf-8")
+          Path(sys.argv[1]).write_text(json.dumps({"p_version_id": sys.argv[2]}), encoding="utf-8")
           PY
-          finish_response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}" \
-            --request POST \
-            --url "$FUNCTION_URL" \
-            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/finish-request.json")"
-          printf '%s' "$finish_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
-          echo "Publicación completa y activada en Supabase."
+          api --request POST --url "$SUPABASE_URL/rest/v1/rpc/ajplay_publish_catalog_version" --data-binary "@$RUNNER_TEMP/finish-request.json" >/dev/null
+          version_id=""
+          trap - ERR
+          echo "Publicación completa: versión activada en Supabase."
