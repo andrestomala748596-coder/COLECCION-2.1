@@ -60,7 +60,10 @@ jobs:
             echo "No hay cambios en los JSON."
           else
             git commit -m "Actualizar catálogo extraído [skip ci]"
-            git push
+            # Integrar commits nuevos de main antes de publicar para evitar non-fast-forward.
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "origin/$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
       - name: Preparar catálogo para Supabase
         env:
@@ -94,4 +97,10 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          curl --fail-with-body --silent --show-error             --request POST             --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish"             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY"             --header "Content-Type: application/json"             --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
