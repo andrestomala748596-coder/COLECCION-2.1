@@ -13,73 +13,128 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Descargar JSON existentes (sin extractor)
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Preparar registros sin perder categoria del archivo
+
+      - name: Preparar catálogo completo conservando categorías
+        env:
+          GITHUB_SHA: ${{ github.sha }}
         run: |
-          python - <<'PY'
-          import json, os
+          set -euo pipefail
+          python - "$RUNNER_TEMP" "$GITHUB_SHA" <<'PY'
+          import json, os, sys
           from pathlib import Path
-          root=Path("peliculas")
-          files=sorted(root.glob("*.json"))
-          if not files: raise SystemExit("ERROR: no hay JSON en peliculas/")
-          rows={}
-          for p in files:
-              default_category=p.stem
-              data=json.loads(p.read_text(encoding="utf-8"))
-              items=data if isinstance(data,list) else [data] if isinstance(data,dict) else None
-              if items is None: raise SystemExit(f"JSON inválido: {p}")
-              for m in items:
-                  if not isinstance(m,dict): continue
-                  cat=str(m.get("CATEGORIA") or m.get("categoria") or default_category).strip() or default_category
-                  def s(v):
-                      if v is None or v=="": return None
-                      if isinstance(v,(dict,list)): return json.dumps(v,ensure_ascii=False)
-                      return str(v)
-                  def n(v):
-                      if v is None or v=="": return None
-                      try: return float(v) if "." in str(v) else int(v)
-                      except (ValueError,TypeError): return None
-                  key=str(m.get("TMDB_ID") or m.get("ID_VIDEO") or (cat+":"+str(m.get("TITULO",""))))
-                  row={"tmdb_id":n(m.get("TMDB_ID")),"id_video":s(m.get("ID_VIDEO") or m.get("ID_OKRU")),"plataforma":s(m.get("PLATAFORMA")),"titulo":s(m.get("TITULO")) or "Sin título","fecha":s(m.get("FECHA")),"portada":s(m.get("PORTADA")),"backdrop":s(m.get("BACKDROP")),"genero":s(m.get("GENERO")),"rating":n(m.get("RATING")),"duracion":n(m.get("DURACION")),"frase_promocional":s(m.get("FRASE_PROMOCIONAL")),"sinopsis":s(m.get("SINOPSIS")),"actores":s(m.get("ACTORES")),"director":s(m.get("DIRECTOR")),"trailer":s(m.get("TRAILER")),"urls":[str(x) for x in m.get("URLS",[]) if isinstance(x,str)] if isinstance(m.get("URLS"),list) else [],"metodo":s(m.get("METODO")),"urls_directas":[str(x) for x in m.get("URLS_DIRECTAS",[]) if isinstance(x,str)] if isinstance(m.get("URLS_DIRECTAS"),list) else [],"url_directa":s(m.get("URL_DIRECTA")),"extracted_by_url":m.get("_EXTRACTED_BY_URL") if isinstance(m.get("_EXTRACTED_BY_URL"),dict) else {},"categoria":cat}
-                  # Same TMDB in multiple category files: preserve separate category membership rows in payload.
-                  rows[(key,cat)]=row
-          data=list(rows.values())
-          if not data: raise SystemExit("ERROR: catálogo vacío")
-          out=Path(os.environ["RUNNER_TEMP"])
-          for i in range(0,len(data),50):
-              (out/f"rows-{i//50:04d}.json").write_text(json.dumps(data[i:i+50],ensure_ascii=False),encoding="utf-8")
-          print(f"JSON: {len(files)}; filas incluidas por archivo/categoria: {len(data)}")
-          print("Categorias detectadas: "+", ".join(sorted({r["categoria"] for r in data})))
+
+          root = Path("peliculas")
+          files = sorted(root.glob("*.json"))
+          if not files:
+              raise SystemExit("ERROR: no hay JSON en peliculas/")
+
+          rows = {}
+          for path in files:
+              default_category = path.stem
+              data = json.loads(path.read_text(encoding="utf-8"))
+              items = data if isinstance(data, list) else [data] if isinstance(data, dict) else None
+              if items is None:
+                  raise SystemExit(f"JSON inválido: {path}")
+
+              for movie in items:
+                  if not isinstance(movie, dict):
+                      continue
+                  category = str(movie.get("CATEGORIA") or movie.get("categoria") or default_category).strip() or default_category
+                  tmdb_id = movie.get("TMDB_ID")
+                  video_id = movie.get("ID_VIDEO") or movie.get("ID_OKRU")
+                  title = movie.get("TITULO") or "Sin título"
+                  key = str(tmdb_id or video_id or f"{category}:{title}")
+
+                  # La Edge Function consume las claves del JSON original.
+                  row = dict(movie)
+                  row["CATEGORIA"] = category
+                  row["ID_VIDEO"] = video_id
+                  row["URLS"] = movie.get("URLS") if isinstance(movie.get("URLS"), list) else (
+                      movie.get("URLS_OKRU") if isinstance(movie.get("URLS_OKRU"), list) else []
+                  )
+                  row["URLS_DIRECTAS"] = movie.get("URLS_DIRECTAS") if isinstance(movie.get("URLS_DIRECTAS"), list) else []
+                  row["_EXTRACTED_BY_URL"] = movie.get("_EXTRACTED_BY_URL") if isinstance(movie.get("_EXTRACTED_BY_URL"), dict) else {}
+                  rows[(key, category)] = row
+
+          movies = list(rows.values())
+          if not movies:
+              raise SystemExit("ERROR: catálogo vacío; no se publicará")
+          out = Path(sys.argv[1])
+          (out / "ajplay-catalog.json").write_text(json.dumps({
+              "commit_sha": sys.argv[2],
+              "peliculas": movies
+          }, ensure_ascii=False), encoding="utf-8")
+
+          for old in out.glob("ajplay-chunk-*.json"):
+              old.unlink()
+          for start in range(0, len(movies), 100):
+              (out / f"ajplay-chunk-{start // 100:04d}.json").write_text(
+                  json.dumps(movies[start:start + 100], ensure_ascii=False),
+                  encoding="utf-8"
+              )
+          print(f"JSON: {len(files)}; registros únicos por identificador/categoría: {len(movies)}")
+          print("Categorías: " + ", ".join(sorted({r["CATEGORIA"] for r in movies})))
+          print(f"Lotes preparados: {(len(movies) + 99) // 100}")
           PY
-      - name: Sincronizar filas existentes y agregar faltantes
+
+      - name: Publicar versión completa en Supabase AJPLAY
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
-          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          for batch in "$RUNNER_TEMP"/rows-*.json; do
-            echo "Sincronizando $(basename "$batch")"
-            python - "$batch" "$RUNNER_TEMP" <<'PY'
-          import json,sys,os
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
+          FUNCTION_URL="$SUPABASE_URL/functions/v1/ajplay-catalog-publish"
+          CURL_RETRY=(--retry 5 --retry-delay 10 --retry-max-time 300 --connect-timeout 20 --max-time 300)
+
+          python - "$RUNNER_TEMP/ajplay-catalog.json" "$RUNNER_TEMP/ajplay-start.json" <<'PY'
+          import json, sys
           from pathlib import Path
-          rows=json.load(open(sys.argv[1],encoding="utf-8"))
-          # POST rows with merge-duplicates; unique target TMDB id if present
-          Path(sys.argv[2],"batch-body.json").write_text(json.dumps(rows,ensure_ascii=False),encoding="utf-8")
+          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          movies = payload.get("peliculas")
+          if not isinstance(movies, list) or not movies:
+              raise SystemExit("ERROR: catálogo sin películas")
+          Path(sys.argv[2]).write_text(json.dumps({
+              "action": "start",
+              "commit_sha": payload.get("commit_sha"),
+              "total_peliculas": len(movies)
+          }), encoding="utf-8")
           PY
-            curl --fail-with-body --silent --show-error --retry 3 --retry-all-errors \
-              --request POST \
-              --url "$SUPABASE_URL/rest/v1/peliculas?on_conflict=tmdb_id" \
-              --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
-              --header "Content-Type: application/json" \
-              --header "Prefer: resolution=merge-duplicates,return=minimal" \
-              --data-binary "@$batch"
-            echo
+
+          start_response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}"             --request POST             --url "$FUNCTION_URL"             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY"             --header "Content-Type: application/json"             --data-binary "@$RUNNER_TEMP/ajplay-start.json")"
+          version_id="$(printf '%s' "$start_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") and d.get("version_id"), d; print(d["version_id"])')"
+          echo "Versión de catálogo creada."
+
+          for batch in "$RUNNER_TEMP"/ajplay-chunk-*.json; do
+            python - "$batch" "$RUNNER_TEMP/ajplay-chunk-request.json" "$version_id" <<'PY'
+          import json, sys
+          from pathlib import Path
+          movies = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          Path(sys.argv[2]).write_text(json.dumps({
+              "action": "chunk",
+              "version_id": sys.argv[3],
+              "peliculas": movies
+          }, ensure_ascii=False), encoding="utf-8")
+          PY
+            response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}"               --request POST               --url "$FUNCTION_URL"               --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"               --header "apikey: $SUPABASE_SERVICE_ROLE_KEY"               --header "Content-Type: application/json"               --data-binary "@$RUNNER_TEMP/ajplay-chunk-request.json")"
+            printf '%s' "$response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
+            echo "Publicado $(basename "$batch")."
           done
-          echo "Sincronizacion de lotes completada."
+
+          python - "$RUNNER_TEMP/ajplay-finish.json" "$version_id" <<'PY'
+          import json, sys
+          from pathlib import Path
+          Path(sys.argv[1]).write_text(json.dumps({
+              "action": "finish",
+              "version_id": sys.argv[2]
+          }), encoding="utf-8")
+          PY
+          finish_response="$(curl --fail-with-body --silent --show-error "${CURL_RETRY[@]}"             --request POST             --url "$FUNCTION_URL"             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY"             --header "Content-Type: application/json"             --data-binary "@$RUNNER_TEMP/ajplay-finish.json")"
+          printf '%s' "$finish_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
+          echo "Catálogo publicado y activado correctamente."
