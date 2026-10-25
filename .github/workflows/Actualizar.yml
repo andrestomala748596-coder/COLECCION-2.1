@@ -1,0 +1,90 @@
+
+name: AJPLAY Extractor
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "**"
+
+  schedule:
+    - cron: "0 */6 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ajplay-extractor
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
+          else
+            python -m pip install requests yt-dlp
+          fi
+
+      - name: Validar urls.txt sin modificarlo
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("urls.txt")
+          if not path.is_file():
+              raise SystemExit("ERROR: falta urls.txt")
+
+          contenido = path.read_text(encoding="utf-8")
+          if not contenido.strip():
+              raise SystemExit("ERROR: urls.txt está vacío")
+
+          datos = json.loads(contenido)
+          if not isinstance(datos, list):
+              raise SystemExit("ERROR: urls.txt debe contener una lista JSON")
+
+          print(f"Registros encontrados: {len(datos)}")
+          PY
+
+      - name: Ejecutar extractor
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python extractor.py
+
+      - name: Verificar que urls.txt siga intacto
+        run: git diff --exit-code -- urls.txt
+
+      - name: Guardar JSON generados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A -- peliculas category_list.json
+
+          if git diff --cached --quiet; then
+            echo "No hay cambios en los JSON."
+          else
+            git commit -m "Actualizar catálogo extraído [skip ci]"
+            git push
+          fi
