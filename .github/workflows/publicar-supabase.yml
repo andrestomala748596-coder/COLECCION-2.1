@@ -13,13 +13,13 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Descargar JSON existentes (sin ejecutar extractor)
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Preparar catálogo existente
+      - name: Preparar catálogo y lotes
         env:
           GITHUB_SHA: ${{ github.sha }}
         run: |
@@ -29,36 +29,80 @@ jobs:
           files = sorted(Path("peliculas").glob("*.json"))
           if not files:
               raise SystemExit("ERROR: no hay JSON en peliculas/")
-          movies = []
-          for p in files:
-              try:
-                  data = json.loads(p.read_text(encoding="utf-8"))
-              except Exception as exc:
-                  raise SystemExit(f"JSON inválido en {p}: {exc}")
-              if isinstance(data, list):
-                  movies.extend(x for x in data if isinstance(x, dict))
-              elif isinstance(data, dict):
-                  movies.append(data)
-              else:
-                  raise SystemExit(f"Formato inesperado en {p}")
+          unique = {}
+          for path in files:
+              data = json.loads(path.read_text(encoding="utf-8"))
+              items = data if isinstance(data, list) else [data] if isinstance(data, dict) else None
+              if items is None:
+                  raise SystemExit(f"Formato inesperado: {path}")
+              for m in items:
+                  if not isinstance(m, dict):
+                      continue
+                  key = f"tmdb:{m['TMDB_ID']}" if m.get("TMDB_ID") else f"video:{m['ID_VIDEO']}" if m.get("ID_VIDEO") else f"title:{m.get('TITULO','')}:{m.get('CATEGORIA','GENERAL')}"
+                  unique[key] = m
+          movies = list(unique.values())
           if not movies:
               raise SystemExit("Catálogo vacío; se cancela por seguridad.")
-          out = Path(os.environ["RUNNER_TEMP"]) / "ajplay-catalog.json"
-          out.write_text(json.dumps({"commit_sha": os.environ["GITHUB_SHA"], "peliculas": movies}, ensure_ascii=False), encoding="utf-8")
-          print(f"JSON leídos: {len(files)} archivos")
-          print(f"Películas preparadas: {len(movies)}")
-          print(f"Tamaño del payload: {out.stat().st_size} bytes")
+          temp = Path(os.environ["RUNNER_TEMP"])
+          (temp / "meta.json").write_text(json.dumps({"action":"start","commit_sha":os.environ["GITHUB_SHA"],"total_peliculas":len(movies)}), encoding="utf-8")
+          for i in range(0, len(movies), 40):
+              (temp / f"chunk-{i//40:04d}.json").write_text(json.dumps({"action":"chunk","peliculas":movies[i:i+40]},ensure_ascii=False),encoding="utf-8")
+          print(f"Archivos JSON: {len(files)}")
+          print(f"Películas únicas: {len(movies)}")
+          print(f"Lotes preparados: {(len(movies)+39)//40}")
           PY
-      - name: Publicar en Supabase AJPLAY
+      - name: Crear versión de catálogo
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
+          set -euo pipefail
           test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          curl --fail-with-body --silent --show-error \
-            --request POST \
+          curl --fail-with-body --silent --show-error --request POST \
             --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
             --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
+            --data-binary "@$RUNNER_TEMP/meta.json" > "$RUNNER_TEMP/start-response.json"
+          cat "$RUNNER_TEMP/start-response.json"
+          VERSION_ID="$(python -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/start-response.json"))["version_id"])')"
+          echo "VERSION_ID=$VERSION_ID" >> "$GITHUB_ENV"
+      - name: Subir lotes pequeños
+        env:
+          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          for chunk in "$RUNNER_TEMP"/chunk-*.json; do
+            python - "$chunk" "$VERSION_ID" <<'PY'
+          import json,sys
+          p=sys.argv[1]; d=json.load(open(p)); d["version_id"]=sys.argv[2]
+          json.dump(d,open(p,"w"),ensure_ascii=False)
+          PY
+            echo "Subiendo $(basename "$chunk")"
+            curl --fail-with-body --silent --show-error --retry 2 --retry-all-errors --request POST \
+              --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
+              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+              --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+              --header "Content-Type: application/json" \
+              --data-binary "@$chunk"
+            echo
+          done
+      - name: Activar versión solo si está completa
+        env:
+          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          python - "$VERSION_ID" "$RUNNER_TEMP" <<'PY'
+          import json,sys
+          p=sys.argv[2]+"/finish.json"
+          json.dump({"action":"finish","version_id":sys.argv[1]},open(p,"w"))
+          PY
+          curl --fail-with-body --silent --show-error --request POST \
+            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$RUNNER_TEMP/finish.json"
+          echo
