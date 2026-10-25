@@ -2,7 +2,8 @@ name: AJPLAY Extractor
 on:
   push:
     branches: ["**"]
-    paths: ["**"]
+    paths-ignore:
+      - ".github/workflows/**"
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
