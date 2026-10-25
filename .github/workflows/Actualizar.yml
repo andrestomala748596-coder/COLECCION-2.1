@@ -73,24 +73,46 @@ jobs:
           python - <<'PY'
           import json, os
           from pathlib import Path
+
           files = sorted(Path("peliculas").glob("*.json"))
           if not files:
               raise SystemExit("ERROR: no hay JSON en peliculas/")
-          movies = []
-          for p in files:
-              data = json.loads(p.read_text(encoding="utf-8"))
-              if isinstance(data, list):
-                  movies.extend(x for x in data if isinstance(x, dict))
-              elif isinstance(data, dict):
-                  movies.append(data)
-              else:
-                  raise SystemExit(f"ERROR: formato inesperado en {p}")
+
+          rows = {}
+          for path in files:
+              raw = json.loads(path.read_text(encoding="utf-8"))
+              items = raw if isinstance(raw, list) else [raw] if isinstance(raw, dict) else None
+              if items is None:
+                  raise SystemExit(f"ERROR: formato inesperado en {path}")
+
+              for movie in items:
+                  if not isinstance(movie, dict):
+                      continue
+                  category = str(movie.get("CATEGORIA") or movie.get("categoria") or path.stem).strip() or path.stem
+                  tmdb_id = movie.get("TMDB_ID")
+                  video_id = movie.get("ID_VIDEO") or movie.get("ID_OKRU")
+                  title = movie.get("TITULO") or "Sin título"
+                  key = str(tmdb_id or video_id or f"{category}:{title}")
+
+                  # La Edge Function espera claves del JSON original y URLS normalizado.
+                  row = dict(movie)
+                  row["CATEGORIA"] = category
+                  row["ID_VIDEO"] = video_id
+                  row["URLS"] = movie.get("URLS") if isinstance(movie.get("URLS"), list) else (
+                      movie.get("URLS_OKRU") if isinstance(movie.get("URLS_OKRU"), list) else []
+                  )
+                  row["URLS_DIRECTAS"] = movie.get("URLS_DIRECTAS") if isinstance(movie.get("URLS_DIRECTAS"), list) else []
+                  row["_EXTRACTED_BY_URL"] = movie.get("_EXTRACTED_BY_URL") if isinstance(movie.get("_EXTRACTED_BY_URL"), dict) else {}
+                  rows[(key, category)] = row
+
+          movies = list(rows.values())
           if not movies:
               raise SystemExit("ERROR: catálogo vacío; no se publicará")
           Path(os.environ["RUNNER_TEMP"], "ajplay-catalog.json").write_text(
               json.dumps({"commit_sha": os.environ["GITHUB_SHA"], "peliculas": movies}, ensure_ascii=False),
               encoding="utf-8")
-          print(f"Películas preparadas: {len(movies)}")
+          print(f"JSON: {len(files)}; registros únicos por identificador/categoría: {len(movies)}")
+          print("Categorías: " + ", ".join(sorted({r["CATEGORIA"] for r in movies})))
           PY
       - name: Publicar versión completa en Supabase AJPLAY
         env:
