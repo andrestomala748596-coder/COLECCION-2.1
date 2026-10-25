@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - ".github/workflows/**"
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -99,6 +99,8 @@ jobs:
         run: |
           test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
           curl --fail-with-body --silent --show-error \
+            --retry 5 --retry-delay 10 --retry-max-time 300 \
+            --connect-timeout 20 --max-time 300 \
             --request POST \
             --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
