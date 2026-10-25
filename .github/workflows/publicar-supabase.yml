@@ -1,4 +1,4 @@
-name: AJPLAY Enviar peliculas a Supabase
+name: AJPLAY Sincronizar categorias y peliculas
 on:
   push:
     branches: ["main"]
@@ -15,25 +15,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Descargar JSON existentes (sin ejecutar extractor)
+      - name: Descargar JSON existentes (sin extractor)
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Convertir JSON a filas de Supabase y dividir en lotes
+      - name: Preparar registros sin perder categoria del archivo
         run: |
           python - <<'PY'
           import json, os
           from pathlib import Path
-          files=sorted(Path("peliculas").glob("*.json"))
+          root=Path("peliculas")
+          files=sorted(root.glob("*.json"))
           if not files: raise SystemExit("ERROR: no hay JSON en peliculas/")
-          movies={}
+          rows={}
           for p in files:
+              default_category=p.stem
               data=json.loads(p.read_text(encoding="utf-8"))
               items=data if isinstance(data,list) else [data] if isinstance(data,dict) else None
               if items is None: raise SystemExit(f"JSON inválido: {p}")
               for m in items:
                   if not isinstance(m,dict): continue
-                  key=f"tmdb:{m.get('TMDB_ID')}" if m.get("TMDB_ID") else f"video:{m.get('ID_VIDEO')}" if m.get("ID_VIDEO") else f"title:{m.get('TITULO','')}:{m.get('CATEGORIA','GENERAL')}"
+                  cat=str(m.get("CATEGORIA") or m.get("categoria") or default_category).strip() or default_category
                   def s(v):
                       if v is None or v=="": return None
                       if isinstance(v,(dict,list)): return json.dumps(v,ensure_ascii=False)
@@ -42,55 +44,42 @@ jobs:
                       if v is None or v=="": return None
                       try: return float(v) if "." in str(v) else int(v)
                       except (ValueError,TypeError): return None
-                  movies[key]={
-                    "tmdb_id":n(m.get("TMDB_ID")),"id_video":s(m.get("ID_VIDEO") or m.get("ID_OKRU")),
-                    "plataforma":s(m.get("PLATAFORMA")),"titulo":s(m.get("TITULO")) or "Sin título",
-                    "fecha":s(m.get("FECHA")),"portada":s(m.get("PORTADA")),"backdrop":s(m.get("BACKDROP")),
-                    "genero":s(m.get("GENERO")),"rating":n(m.get("RATING")),"duracion":n(m.get("DURACION")),
-                    "frase_promocional":s(m.get("FRASE_PROMOCIONAL")),"sinopsis":s(m.get("SINOPSIS")),
-                    "actores":s(m.get("ACTORES")),"director":s(m.get("DIRECTOR")),"trailer":s(m.get("TRAILER")),
-                    "urls":[str(x) for x in m.get("URLS",[]) if isinstance(x,str)] if isinstance(m.get("URLS"),list) else [],
-                    "metodo":s(m.get("METODO")),
-                    "urls_directas":[str(x) for x in m.get("URLS_DIRECTAS",[]) if isinstance(x,str)] if isinstance(m.get("URLS_DIRECTAS"),list) else [],
-                    "url_directa":s(m.get("URL_DIRECTA")),
-                    "extracted_by_url":m.get("_EXTRACTED_BY_URL") if isinstance(m.get("_EXTRACTED_BY_URL"),dict) else {},
-                    "categoria":s(m.get("CATEGORIA")) or "GENERAL"
-                  }
-          rows=list(movies.values())
-          if not rows: raise SystemExit("ERROR: catálogo vacío; se cancela.")
+                  key=str(m.get("TMDB_ID") or m.get("ID_VIDEO") or (cat+":"+str(m.get("TITULO",""))))
+                  row={"tmdb_id":n(m.get("TMDB_ID")),"id_video":s(m.get("ID_VIDEO") or m.get("ID_OKRU")),"plataforma":s(m.get("PLATAFORMA")),"titulo":s(m.get("TITULO")) or "Sin título","fecha":s(m.get("FECHA")),"portada":s(m.get("PORTADA")),"backdrop":s(m.get("BACKDROP")),"genero":s(m.get("GENERO")),"rating":n(m.get("RATING")),"duracion":n(m.get("DURACION")),"frase_promocional":s(m.get("FRASE_PROMOCIONAL")),"sinopsis":s(m.get("SINOPSIS")),"actores":s(m.get("ACTORES")),"director":s(m.get("DIRECTOR")),"trailer":s(m.get("TRAILER")),"urls":[str(x) for x in m.get("URLS",[]) if isinstance(x,str)] if isinstance(m.get("URLS"),list) else [],"metodo":s(m.get("METODO")),"urls_directas":[str(x) for x in m.get("URLS_DIRECTAS",[]) if isinstance(x,str)] if isinstance(m.get("URLS_DIRECTAS"),list) else [],"url_directa":s(m.get("URL_DIRECTA")),"extracted_by_url":m.get("_EXTRACTED_BY_URL") if isinstance(m.get("_EXTRACTED_BY_URL"),dict) else {},"categoria":cat}
+                  # Same TMDB in multiple category files: preserve separate category membership rows in payload.
+                  rows[(key,cat)]=row
+          data=list(rows.values())
+          if not data: raise SystemExit("ERROR: catálogo vacío")
           out=Path(os.environ["RUNNER_TEMP"])
-          for i in range(0,len(rows),50):
-              (out/f"rows-{i//50:04d}.json").write_text(json.dumps(rows[i:i+50],ensure_ascii=False),encoding="utf-8")
-          print(f"JSON: {len(files)} archivos; películas únicas: {len(rows)}; lotes: {(len(rows)+49)//50}")
+          for i in range(0,len(data),50):
+              (out/f"rows-{i//50:04d}.json").write_text(json.dumps(data[i:i+50],ensure_ascii=False),encoding="utf-8")
+          print(f"JSON: {len(files)}; filas incluidas por archivo/categoria: {len(data)}")
+          print("Categorias detectadas: "+", ".join(sorted({r["categoria"] for r in data})))
           PY
-      - name: Insertar lotes directamente en Supabase AJPLAY
+      - name: Sincronizar filas existentes y agregar faltantes
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           set -euo pipefail
-          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta SUPABASE_SERVICE_ROLE_KEY en GitHub Secrets"; exit 1; }
+          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
           for batch in "$RUNNER_TEMP"/rows-*.json; do
-            echo "Insertando $(basename "$batch")"
+            echo "Sincronizando $(basename "$batch")"
+            python - "$batch" "$RUNNER_TEMP" <<'PY'
+          import json,sys,os
+          from pathlib import Path
+          rows=json.load(open(sys.argv[1],encoding="utf-8"))
+          # POST rows with merge-duplicates; unique target TMDB id if present
+          Path(sys.argv[2],"batch-body.json").write_text(json.dumps(rows,ensure_ascii=False),encoding="utf-8")
+          PY
             curl --fail-with-body --silent --show-error --retry 3 --retry-all-errors \
               --request POST \
-              --url "$SUPABASE_URL/rest/v1/peliculas" \
+              --url "$SUPABASE_URL/rest/v1/peliculas?on_conflict=tmdb_id" \
               --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
               --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
               --header "Content-Type: application/json" \
-              --header "Prefer: return=minimal" \
+              --header "Prefer: resolution=merge-duplicates,return=minimal" \
               --data-binary "@$batch"
             echo
           done
-      - name: Verificar cantidad cargada en Supabase
-        env:
-          SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: |
-          set -euo pipefail
-          curl --fail-with-body --silent --show-error \
-            --url "$SUPABASE_URL/rest/v1/peliculas?select=id&limit=1" \
-            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
-            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"
-          echo
-          echo "La consulta de verificación respondió correctamente."
+          echo "Sincronizacion de lotes completada."
