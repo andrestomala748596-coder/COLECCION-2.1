@@ -95,15 +95,85 @@ jobs:
       - name: Publicar versión completa en Supabase AJPLAY
         env:
           SUPABASE_URL: https://nyjgdfqxodcmcsdaprzi.supabase.co
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: \${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
+          set -euo pipefail
           test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::Falta el secreto SUPABASE_SERVICE_ROLE_KEY"; exit 1; }
-          curl --fail-with-body --silent --show-error \
-            --retry 5 --retry-delay 10 --retry-max-time 300 \
-            --connect-timeout 20 --max-time 300 \
+          FUNCTION_URL="$SUPABASE_URL/functions/v1/ajplay-catalog-publish"
+
+          # La Edge Function exige start -> chunk -> finish; no acepta el catálogo entero de una sola vez.
+          python - "$RUNNER_TEMP/ajplay-catalog.json" "$RUNNER_TEMP" <<'PY'
+          import json, sys
+          from pathlib import Path
+          source, out = Path(sys.argv[1]), Path(sys.argv[2])
+          payload = json.loads(source.read_text(encoding="utf-8"))
+          movies = payload.get("peliculas")
+          if not isinstance(movies, list) or not movies:
+              raise SystemExit("ERROR: el catálogo no contiene películas")
+          if not all(isinstance(movie, dict) for movie in movies):
+              raise SystemExit("ERROR: el catálogo contiene registros inválidos")
+          (out / "start-request.json").write_text(json.dumps({
+              "action": "start",
+              "commit_sha": payload.get("commit_sha"),
+              "total_peliculas": len(movies)
+          }, ensure_ascii=False), encoding="utf-8")
+          for old in out.glob("chunk-*.json"):
+              old.unlink()
+          for index in range(0, len(movies), 100):
+              (out / f"chunk-{index // 100:04d}.json").write_text(
+                  json.dumps(movies[index:index + 100], ensure_ascii=False),
+                  encoding="utf-8")
+          print(f"Catálogo validado: {len(movies)} películas en lotes de hasta 100.")
+          PY
+
+          # curl reintenta respuestas transitorias como HTTP 503, sin imprimir credenciales.
+          CURL_RETRY=(--retry 5 --retry-delay 10 --retry-max-time 300 --connect-timeout 20 --max-time 300)
+          start_response="$(curl --fail-with-body --silent --show-error "\${CURL_RETRY[@]}" \
             --request POST \
-            --url "$SUPABASE_URL/functions/v1/ajplay-catalog-publish" \
+            --url "$FUNCTION_URL" \
             --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
             --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
             --header "Content-Type: application/json" \
-            --data-binary "@$RUNNER_TEMP/ajplay-catalog.json"
+            --data-binary "@$RUNNER_TEMP/start-request.json")"
+          version_id="$(printf '%s' "$start_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") and d.get("version_id"), d; print(d["version_id"])')"
+          echo "Versión de catálogo iniciada."
+
+          for batch in "$RUNNER_TEMP"/chunk-*.json; do
+            python - "$batch" "$RUNNER_TEMP/chunk-request.json" "$version_id" <<'PY'
+          import json, sys
+          from pathlib import Path
+          movies = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          Path(sys.argv[2]).write_text(json.dumps({
+              "action": "chunk",
+              "version_id": sys.argv[3],
+              "peliculas": movies
+          }, ensure_ascii=False), encoding="utf-8")
+          PY
+            response="$(curl --fail-with-body --silent --show-error "\${CURL_RETRY[@]}" \
+              --request POST \
+              --url "$FUNCTION_URL" \
+              --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+              --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+              --header "Content-Type: application/json" \
+              --data-binary "@$RUNNER_TEMP/chunk-request.json")"
+            printf '%s' "$response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
+            echo "Lote $(basename "$batch") publicado."
+          done
+
+          python - "$RUNNER_TEMP/finish-request.json" "$version_id" <<'PY'
+          import json, sys
+          from pathlib import Path
+          Path(sys.argv[1]).write_text(json.dumps({
+              "action": "finish",
+              "version_id": sys.argv[2]
+          }), encoding="utf-8")
+          PY
+          finish_response="$(curl --fail-with-body --silent --show-error "\${CURL_RETRY[@]}" \
+            --request POST \
+            --url "$FUNCTION_URL" \
+            --header "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$RUNNER_TEMP/finish-request.json")"
+          printf '%s' "$finish_response" | python -c 'import json,sys; d=json.load(sys.stdin); assert d.get("ok") is True, d'
+          echo "Publicación completa y activada en Supabase."
