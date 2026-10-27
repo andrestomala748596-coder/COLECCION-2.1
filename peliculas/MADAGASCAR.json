@@ -23,12 +23,12 @@
     ],
     "ID_VIDEO": null,
     "PLATAFORMA": "tokyvideo.com",
-    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=TzrjA7k3ZIkay8GFK-0IPw%3D%3D%2C1793182165",
+    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=qrhjD2X23foNpdc6-Fuk6A%3D%3D%2C1793202238",
     "URLS_DIRECTAS": [
-      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=TzrjA7k3ZIkay8GFK-0IPw%3D%3D%2C1793182165"
+      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=qrhjD2X23foNpdc6-Fuk6A%3D%3D%2C1793202238"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=TzrjA7k3ZIkay8GFK-0IPw%3D%3D%2C1793182165"
+      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=qrhjD2X23foNpdc6-Fuk6A%3D%3D%2C1793202238"
     }
   },
   {
@@ -50,12 +50,13 @@
     "URLS_OKRU": [
       "https://ok.ru/video/16210274290372"
     ],
-    "URL_DIRECTA": "",
-    "URLS_DIRECTAS": [],
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://ok.ru/video/16210274290372"
-    ]
+    "URL_DIRECTA": "https://vd686.okcdn.ru/?expires=1793204833680&srcIp=135.119.109.158&pr=10&srcAg=CHROME&ms=176.112.172.2&type=0&sig=wBdmpP4KdNU&ct=0&urls=185.226.55.63&clientType=0&zs=43&id=19064128932548",
+    "URLS_DIRECTAS": [
+      "https://vd686.okcdn.ru/?expires=1793204833680&srcIp=135.119.109.158&pr=10&srcAg=CHROME&ms=176.112.172.2&type=0&sig=wBdmpP4KdNU&ct=0&urls=185.226.55.63&clientType=0&zs=43&id=19064128932548"
+    ],
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/16210274290372": "https://vd686.okcdn.ru/?expires=1793204833680&srcIp=135.119.109.158&pr=10&srcAg=CHROME&ms=176.112.172.2&type=0&sig=wBdmpP4KdNU&ct=0&urls=185.226.55.63&clientType=0&zs=43&id=19064128932548"
+    }
   },
   {
     "CATEGORIA": "MADAGASCAR",
@@ -77,12 +78,12 @@
     "URLS": [
       "https://www.tokyvideo.com/es/video/gigimadagascar-2-escape-a-africa-2008-latino-3"
     ],
-    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=3WhTD1ABmNpW8qWppyigeg%3D%3D%2C1793183608",
+    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=Kg3R6NktSBx8wJjGWHE7EA%3D%3D%2C1793204842",
     "URLS_DIRECTAS": [
-      "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=3WhTD1ABmNpW8qWppyigeg%3D%3D%2C1793183608"
+      "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=Kg3R6NktSBx8wJjGWHE7EA%3D%3D%2C1793204842"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/gigimadagascar-2-escape-a-africa-2008-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=3WhTD1ABmNpW8qWppyigeg%3D%3D%2C1793183608"
+      "https://www.tokyvideo.com/es/video/gigimadagascar-2-escape-a-africa-2008-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824691/mp4/a141db0ce82288ce963e424f133ab77e75f073e4aef2c70c8ba19e220fadb1f9.mp4?secure=Kg3R6NktSBx8wJjGWHE7EA%3D%3D%2C1793204842"
     }
   },
   {
@@ -105,12 +106,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigilos-pinguinos-de-madagascar-2014-ul1QJscppfg3052n"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=Z2Bx1JPJ3cthMPQtozbl3Q&expires=1793126026",
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=dtI6Ud5unZrlxndcJG3urg&expires=1793147258",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=Z2Bx1JPJ3cthMPQtozbl3Q&expires=1793126026"
+      "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=dtI6Ud5unZrlxndcJG3urg&expires=1793147258"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigilos-pinguinos-de-madagascar-2014-ul1QJscppfg3052n": "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=Z2Bx1JPJ3cthMPQtozbl3Q&expires=1793126026"
+      "https://videa.hu/videok/film-animacio/gigilos-pinguinos-de-madagascar-2014-ul1QJscppfg3052n": "https://videa.hu/static/w720p/8.2918719.2521096.1.0.1.1?md5=dtI6Ud5unZrlxndcJG3urg&expires=1793147258"
     }
   }
 ]
