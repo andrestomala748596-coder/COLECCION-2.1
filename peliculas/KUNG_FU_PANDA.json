@@ -21,11 +21,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://ok6-2.vkuser.net/?expires=1793476949909&srcIp=52.165.102.89&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=tRbfx0XVL7U&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
+      "https://ok6-2.vkuser.net/?expires=1793492642329&srcIp=20.171.39.51&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=9D75iQLBBkM&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5"
     ],
-    "URL_DIRECTA": "https://ok6-2.vkuser.net/?expires=1793476949909&srcIp=52.165.102.89&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=tRbfx0XVL7U&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5",
+    "URL_DIRECTA": "https://ok6-2.vkuser.net/?expires=1793492642329&srcIp=20.171.39.51&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=9D75iQLBBkM&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5",
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15446472723182": "https://ok6-2.vkuser.net/?expires=1793476949909&srcIp=52.165.102.89&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=tRbfx0XVL7U&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
+      "https://ok.ru/video/15446472723182": "https://ok6-2.vkuser.net/?expires=1793492642329&srcIp=20.171.39.51&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=9D75iQLBBkM&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5"
     }
   },
   {
@@ -49,12 +49,13 @@
       "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv"
     ],
     "METODO": "BUDTV",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv"
-    ]
+    "URLS_DIRECTAS": [
+      "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv"
+    ],
+    "URL_DIRECTA": "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv",
+    "_EXTRACTED_BY_URL": {
+      "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv": "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/16/kung_fu_panda_3_2016.mkv"
+    }
   },
   {
     "CATEGORIA": "KUNG_FU_PANDA",
@@ -77,12 +78,13 @@
       "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv"
     ],
     "METODO": "BUDTV",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv"
-    ]
+    "URLS_DIRECTAS": [
+      "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv"
+    ],
+    "URL_DIRECTA": "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv",
+    "_EXTRACTED_BY_URL": {
+      "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv": "https://nvmevod.btv.mx/132T/NANEGOBACK/MOVDUAL/27/kung_fu_panda_2_2011.mkv"
+    }
   },
   {
     "CATEGORIA": "KUNG_FU_PANDA",
