@@ -19,13 +19,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigihotel-transilvania-2012-latino-gZ3PjOGzVxgl6z5V"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558744.2597927.1.0.1.1?md5=9oEJOnD3C35LqjHAaETvvw&expires=1794173791",
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3558744.2597927.1.0.1.1?md5=9oEJOnD3C35LqjHAaETvvw&expires=1794173791"
-    ],
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-2012-latino-gZ3PjOGzVxgl6z5V": "https://videa.hu/static/w480p/8.3558744.2597927.1.0.1.1?md5=9oEJOnD3C35LqjHAaETvvw&expires=1794173791"
-    }
+    "URL_DIRECTA": "",
+    "URLS_DIRECTAS": [],
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigihotel-transilvania-2012-latino-gZ3PjOGzVxgl6z5V"
+    ]
   },
   {
     "CATEGORIA": "HOTEL_TRANSILVANIA",
@@ -47,12 +46,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigihotel-transilvania-2-2015-latino-0hNUsgBopOwUnkVz"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=LzC8t6rfGBeObYnFvSYrYQ&expires=1794173795",
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=pnx7KyRbPVpUcx5L2PaFLw&expires=1794194890",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=LzC8t6rfGBeObYnFvSYrYQ&expires=1794173795"
+      "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=pnx7KyRbPVpUcx5L2PaFLw&expires=1794194890"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-2-2015-latino-0hNUsgBopOwUnkVz": "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=LzC8t6rfGBeObYnFvSYrYQ&expires=1794173795"
+      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-2-2015-latino-0hNUsgBopOwUnkVz": "https://videa.hu/static/w480p/8.3558742.2597927.1.0.1.1?md5=pnx7KyRbPVpUcx5L2PaFLw&expires=1794194890"
     }
   },
   {
@@ -75,12 +74,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigihotel-transilvania-3-monstruos-de-9mXQujZILvUtDLQv"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=jmlT6VtZs2AD3c4eXqtRfw&expires=1794173799",
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=JXoANslCN7S0LVTOSONtiQ&expires=1794194900",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=jmlT6VtZs2AD3c4eXqtRfw&expires=1794173799"
+      "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=JXoANslCN7S0LVTOSONtiQ&expires=1794194900"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-3-monstruos-de-9mXQujZILvUtDLQv": "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=jmlT6VtZs2AD3c4eXqtRfw&expires=1794173799"
+      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-3-monstruos-de-9mXQujZILvUtDLQv": "https://videa.hu/static/w480p/8.3558741.2597927.1.0.1.1?md5=JXoANslCN7S0LVTOSONtiQ&expires=1794194900"
     }
   },
   {
@@ -103,12 +102,11 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigihotel-transilvania-4-transformania-2022-KAAwHGz3O0mTqwch"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558739.2597927.1.0.1.1?md5=wlWYbTdsK_FnPMeqBEK3CQ&expires=1794173803",
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3558739.2597927.1.0.1.1?md5=wlWYbTdsK_FnPMeqBEK3CQ&expires=1794173803"
-    ],
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigihotel-transilvania-4-transformania-2022-KAAwHGz3O0mTqwch": "https://videa.hu/static/w480p/8.3558739.2597927.1.0.1.1?md5=wlWYbTdsK_FnPMeqBEK3CQ&expires=1794173803"
-    }
+    "URL_DIRECTA": "",
+    "URLS_DIRECTAS": [],
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigihotel-transilvania-4-transformania-2022-KAAwHGz3O0mTqwch"
+    ]
   }
 ]

@@ -20,13 +20,12 @@
       "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2007-8Av2AtxYy2KO5xZM"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2007-8Av2AtxYy2KO5xZM": "https://videa.hu/static/w720p/8.3558456.2597927.1.0.1.1?md5=HP1y3Iu6277J_IpQvW3aag&expires=1794174194"
-    },
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.3558456.2597927.1.0.1.1?md5=HP1y3Iu6277J_IpQvW3aag&expires=1794174194"
-    ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3558456.2597927.1.0.1.1?md5=HP1y3Iu6277J_IpQvW3aag&expires=1794174194"
+    "_EXTRACTED_BY_URL": {},
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2007-8Av2AtxYy2KO5xZM"
+    ]
   },
   {
     "CATEGORIA": "ALVIN_Y_LAS_ARDILLAS",
@@ -49,13 +48,12 @@
       "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2-DQi6UqAnDktJYTwg"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2-DQi6UqAnDktJYTwg": "https://videa.hu/static/w480p/8.3558434.2597927.1.0.1.1?md5=e8ZhZNAeTXrq7HiebtTJDQ&expires=1794174198"
-    },
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3558434.2597927.1.0.1.1?md5=e8ZhZNAeTXrq7HiebtTJDQ&expires=1794174198"
-    ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3558434.2597927.1.0.1.1?md5=e8ZhZNAeTXrq7HiebtTJDQ&expires=1794174198"
+    "_EXTRACTED_BY_URL": {},
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-2-DQi6UqAnDktJYTwg"
+    ]
   },
   {
     "CATEGORIA": "ALVIN_Y_LAS_ARDILLAS",
@@ -78,13 +76,12 @@
       "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-3-Ata27SNX0ryiFdgU"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-3-Ata27SNX0ryiFdgU": "https://videa.hu/static/w720p/8.3558425.2597927.1.0.1.1?md5=BAey6Ew3QqnwCOsytyUiRg&expires=1794174202"
-    },
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.3558425.2597927.1.0.1.1?md5=BAey6Ew3QqnwCOsytyUiRg&expires=1794174202"
-    ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3558425.2597927.1.0.1.1?md5=BAey6Ew3QqnwCOsytyUiRg&expires=1794174202"
+    "_EXTRACTED_BY_URL": {},
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-3-Ata27SNX0ryiFdgU"
+    ]
   },
   {
     "CATEGORIA": "ALVIN_Y_LAS_ARDILLAS",
@@ -107,12 +104,11 @@
       "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-4-95LnqEOFJqKSmYgA"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-4-95LnqEOFJqKSmYgA": "https://videa.hu/static/w720p/8.3558416.2597927.1.0.1.1?md5=g4zpNJqa6sx8t-qkyl14IQ&expires=1794174207"
-    },
-    "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.3558416.2597927.1.0.1.1?md5=g4zpNJqa6sx8t-qkyl14IQ&expires=1794174207"
-    ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3558416.2597927.1.0.1.1?md5=g4zpNJqa6sx8t-qkyl14IQ&expires=1794174207"
+    "_EXTRACTED_BY_URL": {},
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigialvin-y-las-ardillas-4-95LnqEOFJqKSmYgA"
+    ]
   }
 ]
