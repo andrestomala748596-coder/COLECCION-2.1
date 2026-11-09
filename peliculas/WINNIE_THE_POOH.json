@@ -20,12 +20,13 @@
       "https://videa.hu/videok/film-animacio/gigichristopher-robin-2018-latino-njlGrR3yzFwhKXnD"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigichristopher-robin-2018-latino-njlGrR3yzFwhKXnD"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigichristopher-robin-2018-latino-njlGrR3yzFwhKXnD": "https://videa.hu/static/w720p/8.3533878.2597927.1.0.1.1?md5=qM6WUqM4DVd4MpvsiupGkA&expires=1794211867"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w720p/8.3533878.2597927.1.0.1.1?md5=qM6WUqM4DVd4MpvsiupGkA&expires=1794211867"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3533878.2597927.1.0.1.1?md5=qM6WUqM4DVd4MpvsiupGkA&expires=1794211867"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -48,12 +49,13 @@
       "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-y-el-lnP90MaYMLfnijSQ"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-y-el-lnP90MaYMLfnijSQ"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-y-el-lnP90MaYMLfnijSQ": "https://videa.hu/static/360p/8.3533871.2597927.1.0.1.1?md5=qvaN2m_HyM3aUBv_FX-vCA&expires=1794211874"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/360p/8.3533871.2597927.1.0.1.1?md5=qvaN2m_HyM3aUBv_FX-vCA&expires=1794211874"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/360p/8.3533871.2597927.1.0.1.1?md5=qvaN2m_HyM3aUBv_FX-vCA&expires=1794211874"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -76,12 +78,13 @@
       "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-una-primavera-krRILsbjKz2M9mY1"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-una-primavera-krRILsbjKz2M9mY1"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-una-primavera-krRILsbjKz2M9mY1": "https://videa.hu/static/w480p/8.3533866.2597927.1.0.1.1?md5=4PY5MYuLmekNcF3fiXmAbQ&expires=1794211877"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w480p/8.3533866.2597927.1.0.1.1?md5=4PY5MYuLmekNcF3fiXmAbQ&expires=1794211877"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533866.2597927.1.0.1.1?md5=4PY5MYuLmekNcF3fiXmAbQ&expires=1794211877"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -105,12 +108,12 @@
     ],
     "METODO": "MANUAL",
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigila-gran-pelicula-de-piglet-I4PL9dpbVV8UP3OF": "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=pKF0-oVPcMbIyMqYAQH6Jg&expires=1794195481"
+      "https://videa.hu/videok/film-animacio/gigila-gran-pelicula-de-piglet-I4PL9dpbVV8UP3OF": "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=lhJBfnUcPy7JrpzWGSQrdg&expires=1794211881"
     },
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=pKF0-oVPcMbIyMqYAQH6Jg&expires=1794195481"
+      "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=lhJBfnUcPy7JrpzWGSQrdg&expires=1794211881"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=pKF0-oVPcMbIyMqYAQH6Jg&expires=1794195481"
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533862.2597927.1.0.1.1?md5=lhJBfnUcPy7JrpzWGSQrdg&expires=1794211881"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -133,12 +136,13 @@
       "https://videa.hu/videok/film-animacio/gigila-pelicula-de-tigger-2000-jF5NLmEjrhcnuyrU"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigila-pelicula-de-tigger-2000-jF5NLmEjrhcnuyrU"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigila-pelicula-de-tigger-2000-jF5NLmEjrhcnuyrU": "https://videa.hu/static/w480p/8.3533857.2597927.1.0.1.1?md5=yUMiX0YJyyzXio2bP5juDA&expires=1794211884"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w480p/8.3533857.2597927.1.0.1.1?md5=yUMiX0YJyyzXio2bP5juDA&expires=1794211884"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533857.2597927.1.0.1.1?md5=yUMiX0YJyyzXio2bP5juDA&expires=1794211884"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -161,12 +165,13 @@
       "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-unas-navidades-i8DO8VkR0Xwo6lwM"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-unas-navidades-i8DO8VkR0Xwo6lwM"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-unas-navidades-i8DO8VkR0Xwo6lwM": "https://videa.hu/static/w480p/8.3533843.2597927.1.0.1.1?md5=DZP3_xFF_xaI6QimZpTxPg&expires=1794211887"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w480p/8.3533843.2597927.1.0.1.1?md5=DZP3_xFF_xaI6QimZpTxPg&expires=1794211887"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533843.2597927.1.0.1.1?md5=DZP3_xFF_xaI6QimZpTxPg&expires=1794211887"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -189,12 +194,13 @@
       "https://videa.hu/videok/film-animacio/gigilas-grandes-aventuras-de-winnie-dphssKYCZwwqMe25"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigilas-grandes-aventuras-de-winnie-dphssKYCZwwqMe25"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigilas-grandes-aventuras-de-winnie-dphssKYCZwwqMe25": "https://videa.hu/static/w480p/8.3533846.2597927.1.0.1.1?md5=B_nIDBr1vdM368-LTAp59w&expires=1794211890"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w480p/8.3533846.2597927.1.0.1.1?md5=B_nIDBr1vdM368-LTAp59w&expires=1794211890"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3533846.2597927.1.0.1.1?md5=B_nIDBr1vdM368-LTAp59w&expires=1794211890"
   },
   {
     "CATEGORIA": "WINNIE_THE_POOH",
@@ -217,11 +223,12 @@
       "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-uno-para-n4Lqa805yryie64E"
     ],
     "METODO": "MANUAL",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-uno-para-n4Lqa805yryie64E"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigiwinnie-the-pooh-uno-para-n4Lqa805yryie64E": "https://videa.hu/static/360p/8.3533841.2597927.1.0.1.1?md5=SfSqFbcFOrSZlHbVEd3PQg&expires=1794211894"
+    },
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/360p/8.3533841.2597927.1.0.1.1?md5=SfSqFbcFOrSZlHbVEd3PQg&expires=1794211894"
+    ],
+    "URL_DIRECTA": "https://videa.hu/static/360p/8.3533841.2597927.1.0.1.1?md5=SfSqFbcFOrSZlHbVEd3PQg&expires=1794211894"
   }
 ]

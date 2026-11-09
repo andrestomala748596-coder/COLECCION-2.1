@@ -19,12 +19,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/los-pitufos-1-dan-TxXNUqWQCJcOSSgL"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=4rl5LJQjOKJY5_Y_rUkWqQ&expires=1794194860",
+    "URL_DIRECTA": "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=N23QHBEZXax42WRi2VXm1g&expires=1794211507",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=4rl5LJQjOKJY5_Y_rUkWqQ&expires=1794194860"
+      "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=N23QHBEZXax42WRi2VXm1g&expires=1794211507"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/los-pitufos-1-dan-TxXNUqWQCJcOSSgL": "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=4rl5LJQjOKJY5_Y_rUkWqQ&expires=1794194860"
+      "https://videa.hu/videok/film-animacio/los-pitufos-1-dan-TxXNUqWQCJcOSSgL": "https://videa.hu/static/w1080p/8.3056937.2544586.1.0.1.1?md5=N23QHBEZXax42WRi2VXm1g&expires=1794211507"
     }
   },
   {
@@ -47,12 +47,13 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/los-pitufos-2-dan-qwcNZvHZ4y8cYlau"
     ],
-    "URL_DIRECTA": "",
-    "URLS_DIRECTAS": [],
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/los-pitufos-2-dan-qwcNZvHZ4y8cYlau"
-    ]
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3056354.2544586.1.0.1.1?md5=ruwCNIsNqhYBE5g7P4ZpKQ&expires=1794211510",
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w720p/8.3056354.2544586.1.0.1.1?md5=ruwCNIsNqhYBE5g7P4ZpKQ&expires=1794211510"
+    ],
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/los-pitufos-2-dan-qwcNZvHZ4y8cYlau": "https://videa.hu/static/w720p/8.3056354.2544586.1.0.1.1?md5=ruwCNIsNqhYBE5g7P4ZpKQ&expires=1794211510"
+    }
   },
   {
     "CATEGORIA": "LOS_PITUFOS",
@@ -74,12 +75,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/los-pitufos-3-la-aldea-nCE211BiesmHAPtR"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=8XeqgoE9zpAF8dM-NAxtUw&expires=1794194875",
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=OaGmq0q_tlcqFaEyBxVcMQ&expires=1794211513",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=8XeqgoE9zpAF8dM-NAxtUw&expires=1794194875"
+      "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=OaGmq0q_tlcqFaEyBxVcMQ&expires=1794211513"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/los-pitufos-3-la-aldea-nCE211BiesmHAPtR": "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=8XeqgoE9zpAF8dM-NAxtUw&expires=1794194875"
+      "https://videa.hu/videok/film-animacio/los-pitufos-3-la-aldea-nCE211BiesmHAPtR": "https://videa.hu/static/w720p/8.3056935.2544586.1.0.1.1?md5=OaGmq0q_tlcqFaEyBxVcMQ&expires=1794211513"
     }
   }
 ]

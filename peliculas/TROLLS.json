@@ -19,12 +19,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigitrolls-2016-latino-h7XvP2rxTAbtRS7W"
     ],
-    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=uZRGX3txAKzZo5yGXA0UTw&expires=1794194970",
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=T68bTEpcNmiLDv9_WnMAOA&expires=1794211543",
     "URLS_DIRECTAS": [
-      "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=uZRGX3txAKzZo5yGXA0UTw&expires=1794194970"
+      "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=T68bTEpcNmiLDv9_WnMAOA&expires=1794211543"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://videa.hu/videok/film-animacio/gigitrolls-2016-latino-h7XvP2rxTAbtRS7W": "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=uZRGX3txAKzZo5yGXA0UTw&expires=1794194970"
+      "https://videa.hu/videok/film-animacio/gigitrolls-2016-latino-h7XvP2rxTAbtRS7W": "https://videa.hu/static/w720p/8.3557562.2597927.1.0.1.1?md5=T68bTEpcNmiLDv9_WnMAOA&expires=1794211543"
     }
   },
   {
@@ -47,12 +47,13 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigitrolls-2-gira-mundial-2020-dOSDT0eMNOeRoFVO"
     ],
-    "URL_DIRECTA": "",
-    "URLS_DIRECTAS": [],
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigitrolls-2-gira-mundial-2020-dOSDT0eMNOeRoFVO"
-    ]
+    "URL_DIRECTA": "https://videa.hu/static/w480p/8.3557551.2597927.1.0.1.1?md5=qOvMAELnum4zVtG0pDnnqg&expires=1794211546",
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w480p/8.3557551.2597927.1.0.1.1?md5=qOvMAELnum4zVtG0pDnnqg&expires=1794211546"
+    ],
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigitrolls-2-gira-mundial-2020-dOSDT0eMNOeRoFVO": "https://videa.hu/static/w480p/8.3557551.2597927.1.0.1.1?md5=qOvMAELnum4zVtG0pDnnqg&expires=1794211546"
+    }
   },
   {
     "CATEGORIA": "TROLLS",
@@ -74,11 +75,12 @@
     "URLS": [
       "https://videa.hu/videok/film-animacio/gigitrolls-3-se-armo-la-omut2yjSVLADQy31"
     ],
-    "URL_DIRECTA": "",
-    "URLS_DIRECTAS": [],
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://videa.hu/videok/film-animacio/gigitrolls-3-se-armo-la-omut2yjSVLADQy31"
-    ]
+    "URL_DIRECTA": "https://videa.hu/static/w720p/8.3557538.2597927.1.0.1.1?md5=8uxk8h7AS01-bVQqqM9MfQ&expires=1794211550",
+    "URLS_DIRECTAS": [
+      "https://videa.hu/static/w720p/8.3557538.2597927.1.0.1.1?md5=8uxk8h7AS01-bVQqqM9MfQ&expires=1794211550"
+    ],
+    "_EXTRACTED_BY_URL": {
+      "https://videa.hu/videok/film-animacio/gigitrolls-3-se-armo-la-omut2yjSVLADQy31": "https://videa.hu/static/w720p/8.3557538.2597927.1.0.1.1?md5=8uxk8h7AS01-bVQqqM9MfQ&expires=1794211550"
+    }
   }
 ]
