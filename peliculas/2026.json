@@ -21,11 +21,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=DCKakhqDLFaYF9SXsIRQWfB9rbSIa8iKcuMQINk3ZME&s=1794940212&e=43200&v=438994302&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+      "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=lUah0zHTrteFucOR2oF-tGu7uHInwEQccr1_sqePVL8&s=1794964943&e=43200&v=439590858&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
     ],
-    "URL_DIRECTA": "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=DCKakhqDLFaYF9SXsIRQWfB9rbSIa8iKcuMQINk3ZME&s=1794940212&e=43200&v=438994302&i=0.0&sp=0&fr=v7hdakih9470&r=e",
+    "URL_DIRECTA": "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=lUah0zHTrteFucOR2oF-tGu7uHInwEQccr1_sqePVL8&s=1794964943&e=43200&v=439590858&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-v7hdakih9470.html": "https://s10.vimeos.net/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=DCKakhqDLFaYF9SXsIRQWfB9rbSIa8iKcuMQINk3ZME&s=1794940212&e=43200&v=438994302&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+      "https://vimeos.net/embed-v7hdakih9470.html": "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=lUah0zHTrteFucOR2oF-tGu7uHInwEQccr1_sqePVL8&s=1794964943&e=43200&v=439590858&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
     }
   },
   {
@@ -50,11 +50,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://ok6-11.vkuser.net/?expires=1795026622592&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=sCt6EgHanmk&ct=0&urls=176.112.172.31%3B185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5"
+      "https://ok6-11.vkuser.net/?expires=1795051355612&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=bYdbMuIZM3U&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5"
     ],
-    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795026622592&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=sCt6EgHanmk&ct=0&urls=176.112.172.31%3B185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5",
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795051355612&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=bYdbMuIZM3U&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5",
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15544357030638": "https://ok6-11.vkuser.net/?expires=1795026622592&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=sCt6EgHanmk&ct=0&urls=176.112.172.31%3B185.180.203.95&clientType=0&zs=43&id=17537319635694&scl=5"
+      "https://ok.ru/video/15544357030638": "https://ok6-11.vkuser.net/?expires=1795051355612&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=bYdbMuIZM3U&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5"
     }
   },
   {
@@ -78,12 +78,13 @@
       "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
     ],
     "METODO": "BUDTV",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Toy%20Story%205%20(2026)lat%20(1).mkv"
   },
   {
     "CATEGORIA": "2026",
@@ -106,12 +107,13 @@
       "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
     ],
     "METODO": "BUDTV",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Minions%20&%20monstruos%20(2026)%20LAT%20(1).mkv"
   },
   {
     "CATEGORIA": "2026",
@@ -135,11 +137,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://p3.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=4-pAiwPFiLR9v5LiipR7AEJQNg-ikPtWh63AzNtfzQA&s=1794940218&e=43200&v=438994442&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+      "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=xL7UN4LFl6Lz22CHWTG5wOK54jrM8TrKvffYXz5TSIc&s=1794964949&e=43200&v=439591114&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
     ],
-    "URL_DIRECTA": "https://p3.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=4-pAiwPFiLR9v5LiipR7AEJQNg-ikPtWh63AzNtfzQA&s=1794940218&e=43200&v=438994442&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e",
+    "URL_DIRECTA": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=xL7UN4LFl6Lz22CHWTG5wOK54jrM8TrKvffYXz5TSIc&s=1794964949&e=43200&v=439591114&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-gbjdqxg2thzt.html": "https://p3.vimeos.zip/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=4-pAiwPFiLR9v5LiipR7AEJQNg-ikPtWh63AzNtfzQA&s=1794940218&e=43200&v=438994442&srv=s8&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+      "https://vimeos.net/embed-gbjdqxg2thzt.html": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=xL7UN4LFl6Lz22CHWTG5wOK54jrM8TrKvffYXz5TSIc&s=1794964949&e=43200&v=439591114&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
     }
   },
   {
@@ -164,11 +166,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://p4.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=zvNjmagPayPxlmG73uOdjR-re9-lyjFRSEYwaXGkqTM&s=1794940220&e=43200&v=438994488&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e"
+      "https://p3.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=Aq_X8uOgefkfENg0gGDANze_vcoYTgoK3KYef-lxErI&s=1794964950&e=43200&v=439591198&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e"
     ],
-    "URL_DIRECTA": "https://p4.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=zvNjmagPayPxlmG73uOdjR-re9-lyjFRSEYwaXGkqTM&s=1794940220&e=43200&v=438994488&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e",
+    "URL_DIRECTA": "https://p3.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=Aq_X8uOgefkfENg0gGDANze_vcoYTgoK3KYef-lxErI&s=1794964950&e=43200&v=439591198&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-keryjncteims.html": "https://p4.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=zvNjmagPayPxlmG73uOdjR-re9-lyjFRSEYwaXGkqTM&s=1794940220&e=43200&v=438994488&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e"
+      "https://vimeos.net/embed-keryjncteims.html": "https://p3.vimeos.zip/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=Aq_X8uOgefkfENg0gGDANze_vcoYTgoK3KYef-lxErI&s=1794964950&e=43200&v=439591198&srv=s11&i=0.0&sp=0&fr=keryjncteims&r=e"
     }
   },
   {
@@ -193,11 +195,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://ok6-11.vkuser.net/?expires=1795026630468&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=RNqGN2I-_rk&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
+      "https://ok6-11.vkuser.net/?expires=1795051362882&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=DLXpo-MMumM&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
     ],
-    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795026630468&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=RNqGN2I-_rk&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782",
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795051362882&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=DLXpo-MMumM&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782",
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15153776757486": "https://ok6-11.vkuser.net/?expires=1795026630468&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=RNqGN2I-_rk&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
+      "https://ok.ru/video/15153776757486": "https://ok6-11.vkuser.net/?expires=1795051362882&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=DLXpo-MMumM&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
     }
   },
   {
@@ -222,11 +224,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://ok6-11.vkuser.net/?expires=1795026633282&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=MGZbb4W_ISo&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+      "https://ok6-11.vkuser.net/?expires=1795051365103&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Nk2fdqTPo2g&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
     ],
-    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795026633282&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=MGZbb4W_ISo&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5",
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795051365103&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Nk2fdqTPo2g&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5",
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15434395880174": "https://ok6-11.vkuser.net/?expires=1795026633282&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=MGZbb4W_ISo&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+      "https://ok.ru/video/15434395880174": "https://ok6-11.vkuser.net/?expires=1795051365103&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Nk2fdqTPo2g&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
     }
   },
   {
@@ -251,11 +253,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://vd700.okcdn.ru/?expires=1795026636520&srcIp=20.120.222.168&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=gD5Tz-C3cqk&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
+      "https://vd700.okcdn.ru/?expires=1795051367759&srcIp=20.64.107.49&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=VnQhxHDnKYQ&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
     ],
-    "URL_DIRECTA": "https://vd700.okcdn.ru/?expires=1795026636520&srcIp=20.120.222.168&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=gD5Tz-C3cqk&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8",
+    "URL_DIRECTA": "https://vd700.okcdn.ru/?expires=1795051367759&srcIp=20.64.107.49&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=VnQhxHDnKYQ&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8",
     "_EXTRACTED_BY_URL": {
-      "http://ok.ru/video/10286778747479": "https://vd700.okcdn.ru/?expires=1795026636520&srcIp=20.120.222.168&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=gD5Tz-C3cqk&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
+      "http://ok.ru/video/10286778747479": "https://vd700.okcdn.ru/?expires=1795051367759&srcIp=20.64.107.49&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=VnQhxHDnKYQ&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
     }
   },
   {
@@ -336,11 +338,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=msn7NYnMcO3Qypw1BCMZ1A%3D%3D%2C1795026645"
+      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=JiBRA4voWqJkqXMzKjl9pg%3D%3D%2C1795051375"
     ],
-    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=msn7NYnMcO3Qypw1BCMZ1A%3D%3D%2C1795026645",
+    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=JiBRA4voWqJkqXMzKjl9pg%3D%3D%2C1795051375",
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=msn7NYnMcO3Qypw1BCMZ1A%3D%3D%2C1795026645"
+      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=JiBRA4voWqJkqXMzKjl9pg%3D%3D%2C1795051375"
     }
   },
   {
@@ -392,12 +394,13 @@
       "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
     ],
     "METODO": "BUDTV",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/3TRIOS/Coyote%20vs.%20Acme%20(2026)LAT%20(1).mkv"
   },
   {
     "CATEGORIA": "2026",
@@ -450,12 +453,12 @@
     ],
     "METODO": "MANUAL",
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=Tanabj4EwRuJ9UXpEM8rpw%3D%3D%2C1795027020"
+      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=u1nKalcgzwvgtbOWDZLlhA%3D%3D%2C1795051555"
     },
     "URLS_DIRECTAS": [
-      "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=Tanabj4EwRuJ9UXpEM8rpw%3D%3D%2C1795027020"
+      "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=u1nKalcgzwvgtbOWDZLlhA%3D%3D%2C1795051555"
     ],
-    "URL_DIRECTA": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=Tanabj4EwRuJ9UXpEM8rpw%3D%3D%2C1795027020"
+    "URL_DIRECTA": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=u1nKalcgzwvgtbOWDZLlhA%3D%3D%2C1795051555"
   },
   {
     "CATEGORIA": "2026",
@@ -536,11 +539,12 @@
       "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
     ],
     "METODO": "BUDTV",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4": "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/NENA/MOV/LAT2026/Spidey%20and%20the%20Avengers%20Halloween%20Team%20Up!.mp4"
   }
 ]

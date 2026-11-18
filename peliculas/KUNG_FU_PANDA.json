@@ -21,11 +21,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://ok6-2.vkuser.net/?expires=1795026646966&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=1DrU6Ab6VDo&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5"
+      "https://ok6-2.vkuser.net/?expires=1795051377239&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=qg21TZlRa_Q&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
     ],
-    "URL_DIRECTA": "https://ok6-2.vkuser.net/?expires=1795026646966&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=1DrU6Ab6VDo&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5",
+    "URL_DIRECTA": "https://ok6-2.vkuser.net/?expires=1795051377239&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=qg21TZlRa_Q&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5",
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15446472723182": "https://ok6-2.vkuser.net/?expires=1795026646966&srcIp=20.120.222.168&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=1DrU6Ab6VDo&ct=0&urls=185.180.203.22%3B95.163.35.46&clientType=0&zs=43&id=17368645176046&scl=5"
+      "https://ok.ru/video/15446472723182": "https://ok6-2.vkuser.net/?expires=1795051377239&srcIp=20.64.107.49&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=qg21TZlRa_Q&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
     }
   },
   {
@@ -107,11 +107,12 @@
       "https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4"
     ],
     "METODO": "BUDTV",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4"
-    ]
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4",
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4": "https://69t.btv.mx/69T/32T/MOVLAT2024/Kung.Panda42024LAT.mp4"
+    }
   }
 ]

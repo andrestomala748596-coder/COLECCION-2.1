@@ -78,12 +78,13 @@
       "https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4"
     ],
     "METODO": "BUDTV",
-    "_EXTRACTED_BY_URL": {},
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4"
-    ]
+    "_EXTRACTED_BY_URL": {
+      "https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4": "https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4"
+    },
+    "URLS_DIRECTAS": [
+      "https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4"
+    ],
+    "URL_DIRECTA": "https://69t.btv.mx/69T/32T/ENG-MOVIE/PEL/Peliculasa2022/P3L1CUL4S/Miraculous%20World%20New%20York%2C%20United%20HeroeZ%20%282020%29.mp4"
   },
   {
     "CATEGORIA": "MIRACULOUS",
