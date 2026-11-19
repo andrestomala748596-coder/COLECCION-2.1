@@ -20,13 +20,13 @@
       "https://ok.ru/video/15446472723182"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [
-      "https://ok6-2.vkuser.net/?expires=1795117057703&srcIp=20.83.228.229&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=VDOGHH3YxKA&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
-    ],
-    "URL_DIRECTA": "https://ok6-2.vkuser.net/?expires=1795117057703&srcIp=20.83.228.229&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=VDOGHH3YxKA&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5",
-    "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15446472723182": "https://ok6-2.vkuser.net/?expires=1795117057703&srcIp=20.83.228.229&pr=10&srcAg=CHROME&ms=95.142.206.129&type=3&sig=VDOGHH3YxKA&ct=0&urls=185.180.203.22%3B176.112.172.11&clientType=0&zs=43&id=17368645176046&scl=5"
-    }
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "ConnectionError: HTTPSConnectionPool(host='ok.ru', port=443): Read timed out.",
+      "No se pudo extraer y validar: https://ok.ru/video/15446472723182"
+    ]
   },
   {
     "CATEGORIA": "KUNG_FU_PANDA",
