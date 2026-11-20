@@ -105,12 +105,12 @@
     "URLS_OKRU": [
       "https://ok.ru/video/4198934055529"
     ],
-    "URL_DIRECTA": "https://vd685.okcdn.ru/?expires=1795203365358&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=OVDJxF_ENnc&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8",
+    "URL_DIRECTA": "https://vd685.okcdn.ru/?expires=1795227351317&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=VrYi7FSMxkQ&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8",
     "URLS_DIRECTAS": [
-      "https://vd685.okcdn.ru/?expires=1795203365358&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=OVDJxF_ENnc&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8"
+      "https://vd685.okcdn.ru/?expires=1795227351317&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=VrYi7FSMxkQ&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/4198934055529": "https://vd685.okcdn.ru/?expires=1795203365358&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=OVDJxF_ENnc&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8"
+      "https://ok.ru/video/4198934055529": "https://vd685.okcdn.ru/?expires=1795227351317&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.1&type=5&sig=VrYi7FSMxkQ&ct=0&urls=178.237.23.2&clientType=0&zs=43&id=3276784994921&rjr=8"
     }
   },
   {
@@ -132,12 +132,12 @@
     "URLS_OKRU": [
       "https://ok.ru/video/4190108322409"
     ],
-    "URL_DIRECTA": "https://vd760.okcdn.ru/?expires=1795203373590&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=p3Ohs440ClM&ct=0&urls=178.237.29.9&clientType=0&zs=43&id=3266623965801&rjr=8",
+    "URL_DIRECTA": "https://vd760.okcdn.ru/?expires=1795227357418&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=g3zEe7tEUug&ct=0&urls=176.112.172.77&clientType=0&zs=43&id=3266623965801&rjr=8",
     "URLS_DIRECTAS": [
-      "https://vd760.okcdn.ru/?expires=1795203373590&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=p3Ohs440ClM&ct=0&urls=178.237.29.9&clientType=0&zs=43&id=3266623965801&rjr=8"
+      "https://vd760.okcdn.ru/?expires=1795227357418&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=g3zEe7tEUug&ct=0&urls=176.112.172.77&clientType=0&zs=43&id=3266623965801&rjr=8"
     ],
     "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/4190108322409": "https://vd760.okcdn.ru/?expires=1795203373590&srcIp=172.169.237.179&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=p3Ohs440ClM&ct=0&urls=178.237.29.9&clientType=0&zs=43&id=3266623965801&rjr=8"
+      "https://ok.ru/video/4190108322409": "https://vd760.okcdn.ru/?expires=1795227357418&srcIp=3.41.210.136&pr=10&srcAg=CHROME&rjz=43&ms=95.163.35.37&type=5&sig=g3zEe7tEUug&ct=0&urls=176.112.172.77&clientType=0&zs=43&id=3266623965801&rjr=8"
     }
   },
   {
@@ -161,12 +161,12 @@
       "https://ok.ru/video/15436367268590"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "HTTPError: 503 Server Error: Service Unavailable for url: https://ok.ru/video/15436367268590",
-      "No se pudo extraer y validar: https://ok.ru/video/15436367268590"
-    ]
+    "URLS_DIRECTAS": [
+      "https://ok6-3.vkuser.net/?expires=1795227670951&srcIp=3.41.210.136&pr=10&srcAg=CHROME&ms=95.142.206.130&type=3&sig=ZlgDzkDzmKE&ct=0&urls=185.180.203.68%3B178.237.23.83&clientType=0&zs=43&id=17351287048942&scl=5"
+    ],
+    "URL_DIRECTA": "https://ok6-3.vkuser.net/?expires=1795227670951&srcIp=3.41.210.136&pr=10&srcAg=CHROME&ms=95.142.206.130&type=3&sig=ZlgDzkDzmKE&ct=0&urls=185.180.203.68%3B178.237.23.83&clientType=0&zs=43&id=17351287048942&scl=5",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15436367268590": "https://ok6-3.vkuser.net/?expires=1795227670951&srcIp=3.41.210.136&pr=10&srcAg=CHROME&ms=95.142.206.130&type=3&sig=ZlgDzkDzmKE&ct=0&urls=185.180.203.68%3B178.237.23.83&clientType=0&zs=43&id=17351287048942&scl=5"
+    }
   }
 ]
