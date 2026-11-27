@@ -21,11 +21,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=vrfaF8FB6zKoXWj1-8JaJdEdFKxjSplR6fh4il74uSE&s=1795765585&e=43200&v=461798315&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+      "https://p6.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=YGLQ2JjdXaLHc-3qoWZLaqLJ7NK5sgrZjILSoQ8fEL0&s=1795804903&e=43200&v=463055208&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
     ],
-    "URL_DIRECTA": "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=vrfaF8FB6zKoXWj1-8JaJdEdFKxjSplR6fh4il74uSE&s=1795765585&e=43200&v=461798315&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e",
+    "URL_DIRECTA": "https://p6.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=YGLQ2JjdXaLHc-3qoWZLaqLJ7NK5sgrZjILSoQ8fEL0&s=1795804903&e=43200&v=463055208&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-v7hdakih9470.html": "https://p5.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=vrfaF8FB6zKoXWj1-8JaJdEdFKxjSplR6fh4il74uSE&s=1795765585&e=43200&v=461798315&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
+      "https://vimeos.net/embed-v7hdakih9470.html": "https://p6.vimeos.zip/hls2/03/00010/v7hdakih9470_,n,h,.urlset/master.m3u8?t=YGLQ2JjdXaLHc-3qoWZLaqLJ7NK5sgrZjILSoQ8fEL0&s=1795804903&e=43200&v=463055208&srv=s10&i=0.0&sp=0&fr=v7hdakih9470&r=e"
     }
   },
   {
@@ -49,13 +49,12 @@
       "https://ok.ru/video/15544357030638"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [
-      "https://ok6-11.vkuser.net/?expires=1795851995500&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=VjV5C-Fr2Oo&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5"
-    ],
-    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795851995500&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=VjV5C-Fr2Oo&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5",
-    "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15544357030638": "https://ok6-11.vkuser.net/?expires=1795851995500&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=VjV5C-Fr2Oo&ct=0&urls=176.112.172.31%3B95.163.35.119&clientType=0&zs=43&id=17537319635694&scl=5"
-    }
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://ok.ru/video/15544357030638"
+    ]
   },
   {
     "CATEGORIA": "2026",
@@ -137,11 +136,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=r4tq_hSylRvqU01LG6DXvljjr-5FcwhLQ9HWCk91E-g&s=1795765591&e=43200&v=461798878&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+      "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=u62TB7f13gnCUXljKTDCyyNS3LEC_e9ilTT4Wn2eXCk&s=1795804908&e=43200&v=463055422&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
     ],
-    "URL_DIRECTA": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=r4tq_hSylRvqU01LG6DXvljjr-5FcwhLQ9HWCk91E-g&s=1795765591&e=43200&v=461798878&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e",
+    "URL_DIRECTA": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=u62TB7f13gnCUXljKTDCyyNS3LEC_e9ilTT4Wn2eXCk&s=1795804908&e=43200&v=463055422&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-gbjdqxg2thzt.html": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=r4tq_hSylRvqU01LG6DXvljjr-5FcwhLQ9HWCk91E-g&s=1795765591&e=43200&v=461798878&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
+      "https://vimeos.net/embed-gbjdqxg2thzt.html": "https://s8.vimeos.net/hls2/03/00007/gbjdqxg2thzt_,n,h,.urlset/master.m3u8?t=u62TB7f13gnCUXljKTDCyyNS3LEC_e9ilTT4Wn2eXCk&s=1795804908&e=43200&v=463055422&i=0.0&sp=0&fr=gbjdqxg2thzt&r=e"
     }
   },
   {
@@ -166,11 +165,11 @@
     ],
     "METODO": "AUTOMATICO",
     "URLS_DIRECTAS": [
-      "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=6D0Lu3l-zQKcMcPtB_4iO3TfwosrlWJa1hlfEDA2RUk&s=1795765593&e=43200&v=461799046&i=0.0&sp=0&fr=keryjncteims&r=e"
+      "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=LTdbCS03yGvx0g2REN5snv95l_FyFp8CfoN6KDQEvnQ&s=1795804910&e=43200&v=463055477&i=0.0&sp=0&fr=keryjncteims&r=e"
     ],
-    "URL_DIRECTA": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=6D0Lu3l-zQKcMcPtB_4iO3TfwosrlWJa1hlfEDA2RUk&s=1795765593&e=43200&v=461799046&i=0.0&sp=0&fr=keryjncteims&r=e",
+    "URL_DIRECTA": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=LTdbCS03yGvx0g2REN5snv95l_FyFp8CfoN6KDQEvnQ&s=1795804910&e=43200&v=463055477&i=0.0&sp=0&fr=keryjncteims&r=e",
     "_EXTRACTED_BY_URL": {
-      "https://vimeos.net/embed-keryjncteims.html": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=6D0Lu3l-zQKcMcPtB_4iO3TfwosrlWJa1hlfEDA2RUk&s=1795765593&e=43200&v=461799046&i=0.0&sp=0&fr=keryjncteims&r=e"
+      "https://vimeos.net/embed-keryjncteims.html": "https://s11.vimeos.net/hls2/03/00006/keryjncteims_,n,h,.urlset/master.m3u8?t=LTdbCS03yGvx0g2REN5snv95l_FyFp8CfoN6KDQEvnQ&s=1795804910&e=43200&v=463055477&i=0.0&sp=0&fr=keryjncteims&r=e"
     }
   },
   {
@@ -194,13 +193,12 @@
       "https://ok.ru/video/15153776757486"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [
-      "https://ok6-11.vkuser.net/?expires=1795852005825&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Oz3xTV7QIm4&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
-    ],
-    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795852005825&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Oz3xTV7QIm4&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782",
-    "_EXTRACTED_BY_URL": {
-      "https://ok.ru/video/15153776757486": "https://ok6-11.vkuser.net/?expires=1795852005825&srcIp=4.249.23.52&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=Oz3xTV7QIm4&ct=0&urls=178.237.23.7%3B176.112.172.9&clientType=0&zs=43&id=16861860268782"
-    }
+    "URLS_DIRECTAS": [],
+    "URL_DIRECTA": "",
+    "_EXTRACTED_BY_URL": {},
+    "_EXTRACTION_ERRORS": [
+      "No se pudo extraer y validar: https://ok.ru/video/15153776757486"
+    ]
   },
   {
     "CATEGORIA": "2026",
@@ -223,12 +221,13 @@
       "https://ok.ru/video/15434395880174"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://ok.ru/video/15434395880174"
-    ]
+    "URLS_DIRECTAS": [
+      "https://ok6-11.vkuser.net/?expires=1795891319919&srcIp=172.214.110.66&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=LgDg0k1dsD0&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+    ],
+    "URL_DIRECTA": "https://ok6-11.vkuser.net/?expires=1795891319919&srcIp=172.214.110.66&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=LgDg0k1dsD0&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15434395880174": "https://ok6-11.vkuser.net/?expires=1795891319919&srcIp=172.214.110.66&pr=10&srcAg=CHROME&ms=95.142.206.138&type=3&sig=LgDg0k1dsD0&ct=0&urls=178.237.23.30%3B95.163.35.124&clientType=0&zs=43&id=17348783639278&scl=5"
+    }
   },
   {
     "CATEGORIA": "2026",
@@ -252,11 +251,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://vd700.okcdn.ru/?expires=1795852012071&srcIp=4.249.23.52&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=_IAmFsDcKmY&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
+      "https://vd700.okcdn.ru/?expires=1795891322318&srcIp=172.214.110.66&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=I6k5qchDCh0&ct=0&urls=95.163.35.88&clientType=0&zs=43&id=9154289863255&rjr=8"
     ],
-    "URL_DIRECTA": "https://vd700.okcdn.ru/?expires=1795852012071&srcIp=4.249.23.52&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=_IAmFsDcKmY&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8",
+    "URL_DIRECTA": "https://vd700.okcdn.ru/?expires=1795891322318&srcIp=172.214.110.66&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=I6k5qchDCh0&ct=0&urls=95.163.35.88&clientType=0&zs=43&id=9154289863255&rjr=8",
     "_EXTRACTED_BY_URL": {
-      "http://ok.ru/video/10286778747479": "https://vd700.okcdn.ru/?expires=1795852012071&srcIp=4.249.23.52&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=_IAmFsDcKmY&ct=0&urls=185.226.55.121&clientType=0&zs=43&id=9154289863255&rjr=8"
+      "http://ok.ru/video/10286778747479": "https://vd700.okcdn.ru/?expires=1795891322318&srcIp=172.214.110.66&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.16&type=3&sig=I6k5qchDCh0&ct=0&urls=95.163.35.88&clientType=0&zs=43&id=9154289863255&rjr=8"
     }
   },
   {
@@ -338,11 +337,11 @@
     ],
     "METODO": "MANUAL",
     "URLS_DIRECTAS": [
-      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=9Ych_EYLSCyo8gXagRzJ-g%3D%3D%2C1795850221"
+      "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=fCWWxYVUzqm7Bso5Mt1LFw%3D%3D%2C1795891330"
     ],
-    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=9Ych_EYLSCyo8gXagRzJ-g%3D%3D%2C1795850221",
+    "URL_DIRECTA": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=fCWWxYVUzqm7Bso5Mt1LFw%3D%3D%2C1795891330",
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=9Ych_EYLSCyo8gXagRzJ-g%3D%3D%2C1795850221"
+      "https://www.tokyvideo.com/es/video/gigimadagascar-3-los-fugitivos-2012-latino-3": "https://cdnst95.tokyvideo.com/videos/824/824688/mp4/af7d04f587ef77190cf86e50ce585a430fff4cc5e3b64ebd68bcd98bbe103f4d.mp4?secure=fCWWxYVUzqm7Bso5Mt1LFw%3D%3D%2C1795891330"
     }
   },
   {
@@ -453,12 +452,12 @@
     ],
     "METODO": "MANUAL",
     "_EXTRACTED_BY_URL": {
-      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=MDYivHNG_sIRPK1c4JG_3Q%3D%3D%2C1795852228"
+      "https://www.tokyvideo.com/es/video/la-cabra-que-cambio-el-juego-goat": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=FpXAyAeQm3h246SPtJirlA%3D%3D%2C1795891514"
     },
     "URLS_DIRECTAS": [
-      "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=MDYivHNG_sIRPK1c4JG_3Q%3D%3D%2C1795852228"
+      "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=FpXAyAeQm3h246SPtJirlA%3D%3D%2C1795891514"
     ],
-    "URL_DIRECTA": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=MDYivHNG_sIRPK1c4JG_3Q%3D%3D%2C1795852228"
+    "URL_DIRECTA": "https://cdnst97.tokyvideo.com/videos/898/898196/mp4/3152acc8b75c6e15fc80a3843767f4c254daf48076fdf940d72fd2a4a96da77b.mp4?secure=FpXAyAeQm3h246SPtJirlA%3D%3D%2C1795891514"
   },
   {
     "CATEGORIA": "2026",
