@@ -20,12 +20,13 @@
       "https://ok.ru/video/15446472723182"
     ],
     "METODO": "MANUAL",
-    "URLS_DIRECTAS": [],
-    "URL_DIRECTA": "",
-    "_EXTRACTED_BY_URL": {},
-    "_EXTRACTION_ERRORS": [
-      "No se pudo extraer y validar: https://ok.ru/video/15446472723182"
-    ]
+    "URLS_DIRECTAS": [
+      "https://vd695.okcdn.ru/?expires=1795948442558&srcIp=172.214.103.1&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.11&type=3&sig=q08ZX_i_WdU&ct=0&urls=185.180.203.22&clientType=0&zs=43&id=17368645176046&rjr=11&scl=5"
+    ],
+    "URL_DIRECTA": "https://vd695.okcdn.ru/?expires=1795948442558&srcIp=172.214.103.1&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.11&type=3&sig=q08ZX_i_WdU&ct=0&urls=185.180.203.22&clientType=0&zs=43&id=17368645176046&rjr=11&scl=5",
+    "_EXTRACTED_BY_URL": {
+      "https://ok.ru/video/15446472723182": "https://vd695.okcdn.ru/?expires=1795948442558&srcIp=172.214.103.1&pr=10&srcAg=CHROME&rjz=43&ms=176.112.172.11&type=3&sig=q08ZX_i_WdU&ct=0&urls=185.180.203.22&clientType=0&zs=43&id=17368645176046&rjr=11&scl=5"
+    }
   },
   {
     "CATEGORIA": "KUNG_FU_PANDA",
